@@ -1,0 +1,410 @@
+1 is it going to @weather_attribute_11 @weekly_time_02	you want me to check if it s going to @weather_attribute_11 in what city @weekly_time_02 ?
+2 @location_1	there is going to be @weather_attribute_11 @weekly_time_02 in @location_1
+3 thanks	you are welcome !
+
+1 check forecast for @location_1 on @date_11	the weather forecast in @location_1 is @weather_attribute_11 , the low is @temperature_low_11 and the high is @temperature_high_11
+2 thank you i would like to know if there will be @weather_attribute_12 in @location_1 anytime over @weekly_time_00 ?	@weather_attribute_12 is predicted in @location_1 on @date_12
+3 great , thank you	anytime
+
+1 what is the weather like in the city	which city do you want the weather for ?
+2 will it @weather_attribute_10 in @location_1 @weekly_time_01 ?	@weekly_time_01 in @location_1 is gonna be @weather_attribute_11 , with low temperature of @temperature_low_11 , and high of @temperature_high_11
+3 thank you !	you are welcome
+
+1 is it going to be @weather_attribute_11 this @weekly_time_03	what city should i check for @weather_attribute_11 this @weekly_time_03 in ?
+2 @location_1 , thank you !	in @location_1 it will be @weather_attribute_11 on @date_11 and it might @weather_attribute_12 on @date_12 , no @weather_attribute_10
+3 thank you car !	you are welcome !
+
+1 is it gonna be highest temperature on @date_11 in @location_1 ?	the high temperature in @location_1 should reach @temperature_high_10 on @date_11
+2 thank you	you are welcome
+
+1 will it be @weather_attribute_10 in @location_1 on @date_11 ?	@location_1 s forecast does not predict @weather_attribute_10 on @date_11
+2 thanks a bunch	anytime
+
+1 tell me what the temperature will be like for the @weekly_time_00	in which city ?
+2 i need weekly temperature information for the city of @location_1	in @location_1 , it will be between @temperature_low_11 - @temperature_high_11 on @date_11 , @temperature_low_12 - @temperature_high_12 @date_12 , @temperature_low_13 - @temperature_high_13 @date_13 , @temperature_low_14 - @temperature_high_14 @date_14 , and @temperature_low_15 - @temperature_high_15 @date_15 , and @temperature_low_16 - @temperature_high_16 @date_16 , and @temperature_low_17 - @temperature_high_17 @date_17 
+3 thanks	you are welcome
+
+1 will there be @weather_attribute_11 in @location_1 @weekly_time_01 ?	there will be @weather_attribute_11 @weekly_time_01 in @location_1
+2 thanks	anytime
+
+1 what s the weekly weather report for the city	what city would you like the weekly weather report for ?
+2 will it be @weather_attribute_11 in @location_1 @weekly_time_06 ?	the forecast for @date_11 is supposed to be @weather_attribute_11 for @location_1
+3 thanks for the information	you are welcome
+
+1 what s the weekly forecast for @location_1	the weather will be @weather_attribute_11 on @date_11 , with @weather_attribute_12 on @date_12 , @weather_attribute_13 on @date_13 , @weather_attribute_14 on @date_14 , @weather_attribute_15 on @date_15 , @weather_attribute_16 on @date_16 , and @weather_attribute_17 on @date_17
+2 will there be any @weather_attribute_10 ?	there isn t any @weather_attribute_10 predicted in @location_1 this @weekly_time_00
+3 thank you	you are welcome !
+
+1 is it gonna be @weather_attribute_10 in @location_1 on @date_11 ?	it will not be @weather_attribute_10 on @date_11 , in @location_1 the weather is predicted to be @weather_attribute_11
+2 thanks	anytime
+
+1 what is the weather like in @location_1 city	what would you like to know about the weather in @location_1 ?
+2 what will the temperature be on @date_11 ?	on @date_11 the temperature in @location_1 will be low of @temperature_low_11 , and high of @temperature_high_11
+3 thank you very much car !	you are welcome !
+
+1 check forecast for @location_1	the weather this @weekly_time_00 will be @weather_attribute_11 and @weather_attribute_12 on @date_11 and @date_12 , with the @weather_attribute_13 being @temperature_low_13 and the highest @temperature_high_13 on @date_13 , @date_14 will be a @weather_attribute_14 day
+2 will it be @weather_attribute_15 on @date_15 ?	on @date_15 it will be @weather_attribute_15 on @location_1
+3 thank you !	you are welcome !
+
+1 what s the highest temperature for this @weekly_time_00	what location do you want to know the highest temperature ?
+2 @location_1 , please	on @date_11 in @location_1 it will be a high of @temperature_high_10
+3 excellent , that s very helpful	you are very welcome
+
+1 what s the forecast going to be for @weekly_time_01 and @weekly_time_02	what city do you want the weather for ?
+2 @weekly_time_01 and @weekly_time_02 , will there be @weather_attribute_11 in @location_1 ?	it will be between @temperature_low_10 - @temperature_high_10 , @weather_attribute_11 , and @weather_attribute_12 in @location_1 @weekly_time_01 and @weekly_time_02
+3 thank you	you are welcome
+
+1 give me this @weekly_time_03 s high temperature	what city would you like to know the temperature of ?
+2 @location_1	it will reach @temperature_high_11 on @date_11 and temperature_high_12 on @date_12 in @location_1
+3 thanks	i m here for you !
+
+1 give me the weekly weather forecast	what city are you inquiring about ?
+2 @location_1	in @location_1 it will be @weather_attribute_11 with a temperature between @temperature_low_11 - @temperature_high_11 on @date_11 , @temperature_low_12 - @temperature_high_12 with @weather_attribute_12 on @date_12 , @temperature_low_13 - @temperature_high_13 with @weather_attribute_13 on @date_13 , @temperature_low_14 - @temperature_high_14 with @weather_attribute_14 on @date_14 , @temperature_low_15 - @temperature_high_15 with @weather_attribute_15 on @date_15 , @temperature_low_16 - @temperature_high_16 with @weather_attribute_16 on @date_16 , and @temperature_low_17 - @temperature_high_17 with @weather_attribute_17 on @date_17
+
+1 what s the weather like	what city are you in ?
+2 will it be @weather_attribute_10 in @location_1 on @date_11 ?	the weather forecast does not show that it will be @weather_attribute_10 in @location_1 this @date_11
+3 thank you !	you are welcome my driver !
+
+1 how s the weather in @location_1	what would you like to know about @location_1 s weather ?
+2 what is the @today_01 weather ?	the @today_01 weather in @location_1 is @weather_attribute_11 there is a low of @temperature_low_11 and a high of @temperature_high_11 @today_00
+3 okay great thank you	you are welcome
+
+1 what is the weather like in @location_1	what day are you interested in ?
+2 @date_11 and @date_12	it will be between @temperature_low_11 - @temperature_high_11 on @date_11 and @temperature_low_12 - @temperature_high_12 on @date_12 in @location_1
+3 thank you !	happy to help
+
+1 tell me the weather for this @weekly_time_00	what city are you wanting to know the weather for ?
+2 @location_1 please	for @location_1 , it is expected to be @temperature_low_11 - @temperature_high_11 on @date_11 , @temperature_low_12 - @temperature_high_12 @date_12 , @temperature_low_13 - @temperature_high_13 @date_13 , @temperature_low_14 - @temperature_high_14 @date_14 , and @temperature_low_15 - @temperature_high_15 @date_15 , and @temperature_low_16 - @temperature_high_16 @date_16 , and @temperature_low_17 - @temperature_high_17 @date_17
+
+1 in @location_1 is it @today_02 @weather_attribute_11 ?	@today_02 there is @weather_attribute_11 in @location_1
+2 thank you	you are welcome
+
+1 what will the highest temperature be for @location_1 ?	@date_11 there is going to be highest temperature in @location_1, which is @temperature_high_10 . would you like to know about some other day ?
+2 what will the highest temperature be on @date_12 ?	the high in @location_1 will be @temperature_high_12 on @date_12
+3 thank you	you are welcome
+
+1 check the weather for the 7 day forecast	what city are you interested in ?
+2 @location_1 , please will it be @weather_attribute_11 ?	it will be @weather_attribute_11 @weekly_time_02 in @location_1
+3 thanks so much for the information	you are welcome !
+
+1 what s the temperature on @date_11	what location do you want the temperature for ?
+2 @location_1	in @location_1 the temperature @date_11 is low of @temperature_low_11 , high of @temperature_high_11
+3 thank you !	anytime
+
+1 what is the weather like in @location_1 this @weekly_time_00	on @date_11 this @weekly_time_00 in @location_1 the weather is @weather_attribute_11 with a low temperature of @temperature_low_11 and a high of @temperature_high_11
+2 thank you	you are welcome
+
+1 what s the current temperature outside @weekly_time_01	what location do you want the temperature for ?
+2 @location_1	in @location_1 the temperature @today_00 is low of @temperature_low_11 , high of @temperature_high_11
+3 thank you !	anytime
+
+1 tell me the temperature for this @weekly_time_03	what city are you asking about ?
+2 @location_1	the temperature in @location_1 will be between @temperature_low_11 and @temperature_high_11 on @date_11 and then on @date_12 it will be more @weather_attribute_12 and the temperature will be between @temperature_low_12 and @temperature_high_12
+3 thanks	you are welcome
+
+1 what is the forecast for @location_1 city	the forecast for @location_1 predicts @weather_attribute_11 with a low of @temperature_low_11 with a high of @temperature_high_11 on @date_11
+
+1 is it going to @weather_attribute_11 in the @weekly_time_06	what city can i check for you ?
+2 @location_1 , please	in @location_1 , it will @weather_attribute_11 on @date_11
+3 thanks !	you are welcome
+
+1 will the weather be lowest_temperature in @location_1 on @date_11 ?	the lowest_temperature on @date_11 is @temperature_low_10 in @location_1
+2 thanks	you are welcome
+
+1 @weekly_time_02 i m going to go in @location_1 : will i find @weather_attribute_11 there ?	it will be @weather_attribute_11 in @location_1 @weekly_time_02
+2 thanks	you are welcome
+
+1 what is the weather report for @date_11 in @location_1 ?	it will be @weather_attribute_11 and between @temperature_low_11 - @temperature_high_11 on @date_11 in @location_1
+2 thank you	anytime
+
+1 what is the lowest_temperature in @location_1 on @date_11 ?	the lowest_temperature on @date_11 in @location_1 is @temperature_low_11
+2 thank you	you are very welcome
+
+1 is it gonna be @weather_attribute_12 in @location_1 @weekly_time_01 and @weekly_time_02 ?	there are @weather_attribute_11 in @location_1 @weekly_time_01 , but it will be @weather_attribute_12 @weekly_time_02
+2 thank you very much car !	you are welcome !
+
+1 @weekly_time_06 in @location_1 will there be any @weather_attribute_11 ?	there will be @weather_attribute_11 in @location_1 on @date_11
+2 thank you very much car !	you are very welcome !
+
+1 what s the weather gonna be like on @date_11 in @location_1 ?	the weather forecast in @location_1 predicts @weather_attribute_11 , with a temperature high reaching @temperature_high_11 on @date_11
+2 thanks	anytime
+
+1 what is the weather going to be @weekly_time_01 and @weekly_time_02	what city would you like the weather for ?
+2 @location_1 , please !	it will be between @temperature_low_11 - @temperature_high_11 on @date_11 and @temperature_low_12 - @temperature_high_12 on @date_12 in @location_1
+3 thank you	you are welcome
+
+1 find out if @location_1 will be @weather_attribute_11 this @weekly_time_00	@location_1 will be @weather_attribute_11 on @date_11
+2 thanks	you are welcome anytime
+
+1 is it going to @weather_attribute_11 in the next 7 days	@weather_attribute_11 is in the predictions for several cities , which one would you like me to tell you about ?
+2 @location_1	it is predicted to @weather_attribute_11 in @location_1 on @date_11
+3 thank you !	you are very welcome !
+
+1 find out if it s supposed to @weather_attribute_10	where would you like to know about the forecast for @weather_attribute_10 ?
+2 i m interested in @location_1	there is no @weather_attribute_10 in the forecast
+3 thank you	you are welcome
+
+1 what s the temperature going to be like on @date_11	what city do you want the weather for ?
+2 @location_1	in @location_1 this @date_11 it will be @weather_attribute_11 between @temperature_low_11 - @temperature_high_11
+
+1 will it be @weather_attribute_10 in @location_1 on @date_11 ?	no , on @date_11 in @location_1 there will be a @weather_attribute_11 day
+2 okay , thank you	no problem
+
+1 what is the weather going to be @weekly_time_01 and @weekly_time_02	what city would you like this information from ?
+2 there will be @weather_attribute_11 in @location_1 @weekly_time_01 and @weekly_time_02 ?	there will be @weather_attribute_11 on @location_1 @weekly_time_01 , @weekly_time_02 it will @weather_attribute_12
+3 thank you car !	you are welcome !
+
+
+1 is it being @weather_attribute_11 @weekly_time_01 in @location_1 ?	there is no @weather_attribute_11 in @location_1 @weekly_time_01
+2 thank you	anytime
+
+1 what is the weather going to be @weekly_time_01 and @weekly_time_02	what city are you wanting to know the weather for ?
+2 @location_1	in @location_1 , it will @weather_attribute_11 @date_11 with a low of @temperature_low_11 and high of @temperature_high_11 it will be @weather_attribute_12 @date_12 , with a low of @temperature_low_12 and a high of @temperature_high_12
+3 thanks	you are welcome
+
+1 what is the weather for the next 7 days	what city are you interested in learning the weather for ?
+2 i would like information about @location_1 please	it will be in the @temperature_low_11 - @temperature_high_11 on @date_11 , @temperature_low_12 - @temperature_high_12 on @date_12 , @temperature_low_13 - @temperature_high_13 on @date_13 , @temperature_low_14 - @temperature_high_14 on @date_14 , @temperature_low_15 - @temperature_high_15 on @date_15 , @temperature_low_16 - @temperature_high_16 on @date_16 and @temperature_low_17 - @temperature_high_17 on @date_17 
+3 okay great , thank you so much	no problem
+
+1 please check the weather for this @weekly_time_00	alright , what location are you asking about ?
+2 will it be @weather_attribute_10 in @location_1 ?	it will not be @weather_attribute_10 in @location_1
+3 okay , thanks for checking !	no problem !
+
+1 what is the local weather forecast for this @weekly_time_03	for what city would you like the weekly forecast for ?
+2 will it be @weather_attribute_10 in @location_1 ?	it will not be @weather_attribute_10 in @location_1 this @weekly_time_03
+3 thank you	you are welcome !
+
+1 will it be @weather_attribute_10 in @location_1 on @date_11 ?	there will not be @weather_attribute_10 in @location_1 on @date_11 ; the weather forecast calls for @weather_attribute_11
+2 thank you very much car !	you are welcome !
+
+1 is it being @weather_attribute_11 @weekly_time_02 in @location_1 ?	there is no @weather_attribute_11 in @location_1 @weekly_time_02
+2 thank you	anytime
+
+1 on @date_11 will there be @weather_attribute_11 in @location_1	yes , there will be @weather_attribute_11 in @location_1 on @date_11
+2 thanks	you are welcome
+
+1 get me the weather forecast for the @weekly_time_06	for what city would you like the forecast ?
+2 @location_1	over the @weekly_time_06 , @weather_attribute_11 , @weather_attribute_12 , @weather_attribute_13 , @weather_attribute_14 , @weather_attribute_15 and @weather_attribute_16 , along with @weather_attribute_17 are predicted in @location_1
+3 thank you	you are very welcome
+
+1 how @weather_attribute_10 is it going to be this @weekly_time_00	in which location do you want to know if it s going to be @weather_attribute_10 ?
+2 @location_1	it will not be @weather_attribute_10 in @location_1 this @weekly_time_00
+3 thanks	of course
+
+1 what s the @today_01 temperature outside	what location do you want the temperature for ?
+2 @location_1	in @location_1 the temperature @weekly_time_01 is low of @temperature_low_11 , high of @temperature_high_11
+3 thank you !	anytime
+
+1 check the weather for the 7 day forecast	what city shall i retrieve the 7 day forecast of ?
+2 @location_1 , please	the forecast for @location_1 for the next 7 days is @date_11 , @weather_attribute_11 , low of @temperature_low_11 and high of @temperature_high_11 , @date_12 @weather_attribute_12 of @temperature_low_12 and high of @temperature_high_12 , @date_13 @weather_attribute_13 with low of @temperature_low_13 and high of @temperature_high_13 , @date_14 @weather_attribute_14 with low of @temperature_low_14 and high of @temperature_high_14 , @date_15 @weather_attribute_15 , low of @temperature_low_15 and high of @temperature_high_16 , @date_16 @weather_attribute_16 low of @temperature_low_16 and high of @temperature_high_16 and @date_17 @weather_attribute_17 low of @temperature_low_17 and high of @temperature_high_17
+3 thanks	you are welcome !
+
+1 will it be @weather_attribute_11 in @location_1 during the @weekly_time_06 ?	@date_11 is @weather_attribute_11 , @date_12 will have @weather_attribute_12 , and there will be @weather_attribute_13 in @location_1 on @date_13
+2 thanks	anytime
+
+1 how is the weather this @weekly_time_00 in @location_1 ?	what days are you interested in ?
+2 the whole @weekly_time_00	in @location_1 , it will be @weather_attribute_11 on @date_11 , @weather_attribute_12 on @date_12 , @weather_attribute_13 on @date_13 , @weather_attribute_14 on @date_14 , @weather_attribute_15 on @date_15 , @weather_attribute_16 on @date_16 , @weather_attribute_17 on @date_17
+3 thank you	anytime
+
+1 which one is gonna be the @weather_attribute_11 @weekly_time_01 and @weekly_time_02 in @location_1 ?	@date_11 will have the @weather_attribute_11 of @temperature_low_11 in @location_1
+2 thank you very much !	happy to help
+
+1 what s the @today_01 temperature outside	for what city would you like the current weather for ?
+2 i m located in @location_1	the temperature in @location_1 is showing a low of @temperature_low_11 with a high of @temperature_high_11
+3 thanks	you are very welcome
+
+1 what s the weather forecast for @weekly_time_02	what city can i tell you the weather for ?
+2 @location_1	@weather_attribute_11 , with a low of @temperature_low_11 and high of @temperature_high_11 is predicted in @location_1 @weekly_time_02
+3 thank you	you are welcome
+
+1 what is the weather supposed to be like for the @weekly_time_00	what city should i check the weekly weather report for ?
+2 @location_1 , will there be a @weather_attribute_10 , anytime this @weekly_time_00 ?	there will not be a @weather_attribute_10 in @location_1 this @weekly_time_00
+3 thank you	you are welcome
+
+1 what s the temperature for @weekly_time_01	tell me what city i should find the temperature for
+2 i want to know the temperature in @location_1	@weekly_time_01 s temperature in @location_1 is showing a high of @temperature_high_11 with a low of @temperature_low_11
+3 great , thank you	you are welcome
+
+1 will it be highest temperature in @location_1 on @date_11 ?	there will be a high of @temperature_high_11 and a low of @temperature_low_11 in @location_1 on @date_11
+2 thank you	you are welcome
+
+1 what s the temperature	what location do you want the temperature for ?
+2 i need to know the temperature for @location_1 on @date_11	@date_11 s temperature will be a low of @temperature_low_11 , high of @temperature_high_11
+3 thanks	anytime !
+
+1 what is the weather in @location_1 city	what can i tell you about the weather in @location_1 ?
+2 i d like to know the weather @weather_attribute_11 in the next @weekly_time_03	it will be @weather_attribute_11 on @date_11 for this @weekly_time_03 in @location_1
+3 thank you car !	you are very welcome !
+
+1 check the next 48 hours and tell me is @location_1 will be @weather_attribute_10	no , it s not gonna be @weather_attribute_10 in @location_1 in next 48 hours : @weekly_time_01 there is @weather_attribute_11 and @weekly_time_02 it will be @weather_attribute_12
+2 thanks !	no problem , i m here for you !
+
+1 is it going to be @weather_attribute_10 in the next 7 days	what city can i give you this weather information for ?
+2 i m in @location_1 but i will only be needing info on the next two_days	it will not be @weather_attribute_10 in @location_1 in the next two_days
+3 thanks	you are welcome
+
+1 what s the weather like	what city would you like the weather for ?
+2 i want to know if it will @weather_attribute_10 in @location_1 on @date_11	on @date_11 in @location_1 there isn t any @weather_attribute_10 predicted , only @weather_attribute_11
+3 thank you car !	you are welcome my driver !
+
+1 what s the temperature in city	in what city ?
+2 find out the temperature in @location_1 on @date_11	the low temperature will be @temperature_low_11 and the high will be @temperature_high_11 on @date_11 in @location_1
+3 thank you so much !	you are welcome !
+
+1 is there any @weather_attribute_11 in the @today_01 weather forecast in @location_1 ?	@weekly_time_01 it s gonna fall @weather_attribute_11 in @location_1
+2 thank you !	you are welcome !
+
+1 what s the 7 day forecast in @location_1 ?	the weather forecast in @location_1 is @weather_attribute_11 on @date_11 , @weather_attribute_12 on @date_12 , @weather_attribute_13 on @date_13 , @weather_attribute_14 on @date_14 , @weather_attribute_15 on @date_15 , @weather_attribute_16 on @date_16 , @weather_attribute_17 on @date_17
+2 thanks	sure !
+
+1 will there be @weather_attribute_10 in @location_1 on @date_11 ?	there should not be any @weather_attribute_10 in @location_1 on @date_11
+2 okay , thank you	no problem
+
+1 will it be @weather_attribute_11 in @location_1 @weekly_time_02 ?	the weather forecast in @location_1 @weekly_time_02 will be @weather_attribute_11
+2 thanks	you are very welcome
+
+1 can i expect to see @weather_attribute_10 in @location_1 @weekly_time_06 ?	i m sorry , there aren t any days where @weather_attribute_10 are predicted in @location_1 @weekly_time_06
+2 thank you	you are welcome
+
+1 what s the temperature going to be for the @weekly_time_06	what city do you want the weather for ?
+2 @location_1	@weekly_time_06 , @location_1 s temperatures will vary between lows in the @temperature_low_10 to a high of @temperature_high_10
+3 thank you	glad to help
+
+1 what s the forecast for the weather @weekly_time_06	what city would you like to know @weekly_time_06 s forecast for ?
+2 tell me @location_1 s forecast @weekly_time_06 , if it s going to be @weather_attribute_10 or not ?	it is not predicted to be @weather_attribute_10 in @location_1 @weekly_time_06
+3 thank you	you are welcome
+
+1 what s the weather like this @weekly_time_00	what city do you want the weather for ?
+2 @location_1 , please	the weather this weekly_time_00 in @location_1 for @date_11 is @weather_attribute_11 , low of @temperature_low_11 , high of @temperature_high_11 , for @date_12 is @weather_attribute_12 , low of @temperature_low_12 , high of @temperature_high_12 , @date_13 is @weather_attribute_13 , low of @temperature_low_13 , high of @temperature_high_13 , @date_14 is @weather_attribute_14 , low of @temperature_low_14 , high of @temperature_high_14 and @date_15 is @weather_attribute_15 , low of @temperature_low_15 , high of @temperature_high_15 , @date_16 is @weather_attribute_16 , low of @temperature_low_16 , high of @temperature_high_16 and finally @date_17 is @weather_attribute_17 , low of @temperature_low_17 , high of @temperature_high_17
+3 perfect , thanks	you are welcome
+
+1 check the weather forecast	for what city should i check the weather forecast for ?
+2 check @location_1	what would you like to know about the weather in @location_1 ?
+3 will it be @weather_attribute_11 in the next two_days ?	the next two_days will be @weather_attribute_11 , one will be @weather_attribute_11 with a low of @temperature_low_11 and a high of @temperature_high_11 and the other will be @weather_attribute_12 , low of @temperature_low_12 with a high of @temperature_high_12
+4 thanks	not a problem
+
+1 is there a chance of @weather_attribute_10 in this weeks weather forecast	what city are you asking about ?
+2 @location_1 , please !	there will be no chance of @weather_attribute_10 for @location_1 this @weekly_time_00
+3 thank you !	you are welcome !
+
+1 is it gonna be @weather_attribute_10 in @location_1 on the @weekly_time_00 ?	it s not gonna be @weather_attribute_10 in @weekly_time_00 in @location_1
+2 thank you	you are welcome
+
+1 what is the forecast in my city	in which city are you now ?
+2 i m in @location_1 which one is it the weather forecast for the next two_days ?	in @location_1 it s gonna be @weather_attribute_11 @weekly_time_01 and there will be @weather_attribute_12 on @weekly_time_02
+3 thanks	you are welcome
+
+1 will the weather be @weather_attribute_10 in @location_1 over the next 7 days ?	no , the weather won t be @weather_attribute_10 in @location_1 in @weekly_time_06
+2 what is the 7 day forecast for @location_1 @weekly_time_06 ?	in @location_1 , it will be @weather_attribute_11 on @date_11 , the @weather_attribute_12 on @date_12 , @weather_attribute_13 on @date_13 , the @weather_attribute_14 on @date_14 , @weather_attribute_15 on @date_15 , @weather_attribute_16 on @date_16 , and @weather_attribute_17 on @date_17
+3 thank you	anytime
+
+1 tell me the temperature for this @weekly_time_03	what city are you asking about ?
+2 @location_1	the temperature in @location_1 will be between @temperature_low_11 and @temperature_high_11 on @date_11 and then on @date_12 during the @weekly_time_03 it will be more @weather_attribute_12 and the temperature will be between @temperature_low_12 and @temperature_high_12
+3 thanks	you are welcome
+
+1 what s the temperature going to be this @weekly_time_00	what city are you inquiring about ?
+2 @location_1	this @weekly_time_00 in @location_1 the temperatures will be low of @temperature_low_11 and a high of @temperature_high_11 on @date_11 , low of @temperature_low_12 , high of @temperature_high_12 on @date_12 , low of @temperature_low_13 , high of @temperature_high_13 on @date_13 , low of @temperature_low_14 , high of @temperature_high_14 on @date_14 , low of @temperature_low_15 , high of @temperature_high_15 on @date_15 , low of @temperature_low_16 , high of @temperature_high_16 on @date_16 , and a low of @temperature_low_17 , high of @temperature_high_17 on @date_17
+3 okay , thank you for looking !	you are welcome !
+
+1 what is the weather for @weekly_time_00	what location do you want the weather for ?
+2 i will traveling to @location_1 so i need information for there please	any day in particular you need the forecast for or do you just want the whole @weekly_time_00 for @location_1 ?
+3 for the whole @weekly_time_00 , please !	the weather @weekly_time_06 for @location_1 is going to be a series of ups and downs from @weather_attribute_11 on @date_11 to a @weather_attribute_12 on @date_12 and to @weather_attribute_13 on @date_13 the highs are forecast to be near @temperature_high_10 with lows near @temperature_low_10
+4 thank you so much for the information	you are welcome have a good day
+
+1 will it be @weather_attribute_10 this @weekly_time_00	what city would you like to know if it is @weather_attribute_10 ?
+2 please check for @location_1	the weekly forecast is not showing any @weather_attribute_10 days in @location_1 this @weekly_time_00
+3 okay perfect , thanks !	you are welcome have a nice day
+
+1 start listening what will be the weather for the @weekly_time_06	what city do you want the weather for ?
+2 @location_1 please	in @location_1 , it will be between @temperature_low_11 - @temperature_high_11 @date_11 , @temperature_low_12 - @temperature_high_12 @date_12 , @temperature_low_13 - @temperature_high_13 @date_13 , @temperature_low_14 - @temperature_high_14 @date_14 , @temperature_low_15 - @temperature_high_15 @date_15 , @temperature_low_16 - @temperature_high_16 @date_16 , and @temperature_low_17 - @temperature_high_17 on @date_17
+3 good to know	anytime
+
+1 what s the weather going to be like @weekly_time_06	what city are you inquiring about ?
+2 will it @weather_attribute_11 in @location_1 ?	it might @weather_attribute_11 in @location_1 on @date_11
+3 thank you !	glad i could help out
+
+1 what s the forecast in @location_1 for this @weekly_time_03 ?	in @location_1 it will be @weather_attribute_11 on @date_11 , and @weather_attribute_12 on @date_12
+2 thank you	you are welcome
+
+1 is it gonna @weather_attribute_10 in @location_1 @weekly_time_01 and @weekly_time_02 ?	no , it won t @weather_attribute_10 in @location_1 in next two_days , the weather will be @weather_attribute_11 @weekly_time_01 and @weather_attribute_12 @weekly_time_02
+2 thank you	glad i could help out
+
+1 what s the forecast report	for what city please ?
+2 i want to know if there is a @weather_attribute_10 in the forecast for @location_1 for this @weekly_time_00	there is no @weather_attribute_10 predicted in @location_1 this @weekly_time_00
+3 good to hear , thank you	no problem
+
+1 will it be @weather_attribute_10 this @weekly_time_03	what city are you in ?
+2 @location_1	it s not gonna be @weather_attribute_10 this @weekly_time_03 in @location_1 but it might @weather_attribute_11 on @date_11 and it could fall @weather_attribute_12 on @date_12
+3 oh ok thanks	you are welcome , glad i could help
+
+1 what is the weather for @weekly_time_06	what city are you located in ?
+2 i need to know the temperature in @location_1 @weekly_time_00	it will be @temperature_low_10 - @temperature_high_10 in @location_1 @weekly_time_06
+3 ok , thanks	not a problem
+
+1 is it supposed to @weather_attribute_10 in @location_1 @weekly_time_01 or @weekly_time_02 ?	no , there isn t any @weather_attribute_10 predicted in @location_1 @weekly_time_01 or @weekly_time_02
+2 thank you	you are welcome !
+
+1 what s the temperature outside like @weekly_time_02	for which city would you like to know this ?
+2 @location_1 please	its a @weather_attribute_11 on @weekly_time_02 , the temperature in @location_1 is predicted to be @temperature_low_11 with a high of @temperature_high_11
+3 great , thank you	happy to help
+
+1 what is the weather forecast for the next 7 days	what is the name of the city you want the forecast from ?
+2 @location_1 , please	in @location_1 it will be @weather_attribute_11 on @date_11 , @weather_attribute_12 on @date_12 , @weather_attribute_13 on @date_13 , @weather_attribute_14 on @date_14 , @weather_attribute_15 on @date_15 , @weather_attribute_16 on @date_16 , and @weather_attribute_17 on @date_17
+3 thank you	you are welcome !
+
+1 what is the weather like this @weekly_time_00	you would like to know what the weather is like for what city ?
+2 will it be @weather_attribute_10 in @location_1 this @weekly_time_00 ?	it will not be @weather_attribute_10 in @location_1 this @weekly_time_00
+3 thank you	no problem
+
+1 check the weather for chances of @weather_attribute_11	what location do you want the weather for ?
+2 @location_1	it could @weather_attribute_11 in @location_1 on @date_11
+3 alright , thanks	you are welcome
+
+1 will it be @weather_attribute_11 this @weekly_time_00	what city are you interested in ?
+2 @location_1	it will be @weather_attribute_11 on @date_11 in @location_1 this @weekly_time_00
+3 okay , great ! thanks	you are welcome !
+
+1 what is the forecast for @location_1 city	what would you like to know about the weather in @location_1 ?
+2 will it @weather_attribute_10 on @date_11 ?	the weather forecast for @date_11 in @location_1 does not show that it will @weather_attribute_10 at all
+3 thanks a lot	not a problem
+
+1 is @weather_attribute_10 forecasted this @weekly_time_00	what city do you want to find out if it is @weather_attribute_10 ing in ?
+2 @location_1 , please !	there is no @weather_attribute_10 in the forecast for @location_1
+3 thank you	you are welcome
+
+1 what is the weather	please tell me the city you would like the weather for ?
+2 in @location_1 , please	what would you like to know about the weather in @location_1 ?
+3 the forecast @weekly_time_01	it is @weather_attribute_11 with temperatures between @temperature_low_11 - @temperature_high_11 in @location_1
+4 alright , thanks	no problem ! you are welcome
+
+1 what is the temperature	for what city ?
+2 @location_1 , on @date_11 please	on @date_11 the temperature in @location_1 will be low of @temperature_low_11 , and high of @temperature_high_11
+3 thanks	no problem !
+
+1 what s the highest temperature for this @weekly_time_00	you wanna know the highest temperature of which city ?
+2 @location_1 please , the highest temperature for this @weekly_time_00	@date_11 says that it has the @temperature_high_10 in @location_1 this @weekly_time_00
+3 thank you !	anytime
+
+1 is it gonna be lowest_temperature @date_11 in @location_1 ?	the temperature in @location_1 has a low of @temperature_low_11 and a high of @temperature_high_11 on @date_11
+2 thank you	you are welcome
+
+1 what s the temperature going to be like on @date_11	what city would you like the temperature for on @date_11 ?
+2 please check the temperature for @location_1 thanks !	on @date_11 in @location_1 it will be @weather_attribute_11 there is going to be a low of @temperature_low_11 and a high of @temperature_high_11
+3 okay , perfect thanks !	you are welcome !
+
+1 what is the @today_01 temperature	what city would you like the @today_01 temperature for ?
+2 @location_1 , please	the @today_01 temperature in @location_1 is a low of @temperature_low_11 and a high of @temperature_high_11
+3 sounds good , thank you	you are welcome !
+
+1 what s the weather in @location_1 now ?	in @location_1 the weather is @weather_attribute_11 @today_00
+2 thank you	you are very welcome
+
+1 what is the weather like @today_00 ?	which city are you inquiring about ?
+2 @location_1	@location_1 is currently @weather_attribute_11 with a low of @temperature_low_11 with a high of @temperature_high_11
+3 thanks	you are welcome !
+
+1 what is the weather like @today_00 ?	which city are you inquiring about ?
+2 @location_1	@location_1 is currently @weather_attribute_11
+3 thanks	you are welcome !
+
+#

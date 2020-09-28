@@ -1,35 +1,27 @@
-from utils.preprocessSMD import load_SMD
 from transformers import (AdamW,WEIGHTS_NAME, CONFIG_NAME)
-from utils.hugging_face import load_model,get_parser,top_filtering, SPECIAL_TOKENS, add_special_tokens_, average_distributed_scalar, make_logdir, build_input_from_segments,add_token_bAbI
 from ignite.engine import Engine, Events
 from ignite.handlers import ModelCheckpoint
 from ignite.metrics import Accuracy, Loss, MetricsLambda, RunningAverage
 from ignite.contrib.handlers import ProgressBar, PiecewiseLinear
 from ignite.contrib.handlers.tensorboard_logger import TensorboardLogger, OutputHandler, OptimizerParamsHandler
-from utils.hugging_face import load_model,get_parser, SPECIAL_TOKENS,MODEL_INPUTS, add_special_tokens_, average_distributed_scalar, make_logdir, add_token_bAbI
+from utils.hugging_face import top_filtering, build_input_from_segments
+from utils.hugging_face import get_loader, load_model, get_parser, SPECIAL_TOKENS, MODEL_INPUTS, add_special_tokens_, average_distributed_scalar, make_logdir, add_token_bAbI
+from utils.preprocessSMD import load_SMD, generate_dataset_FINETUNE
 
-from argparse import ArgumentParser
-import torch
-import torch.nn.functional as F
 import os
-from ignite.engine import Engine, Events
-from ignite.handlers import ModelCheckpoint
-from ignite.metrics import Accuracy, Loss, MetricsLambda, RunningAverage
-from ignite.contrib.handlers import ProgressBar, PiecewiseLinear
-from ignite.contrib.handlers.tensorboard_logger import TensorboardLogger, OutputHandler, OptimizerParamsHandler
+import os.path
 import math
-from pprint import pformat
 import random
-from utils.preprocessSMD import generate_dataset_FINETUNE
 import numpy as np
-from tqdm import tqdm
 import warnings
 import json
 import jsonlines
-import os.path
+from tqdm import tqdm
 from collections import defaultdict
-from utils.hugging_face import get_loader
-
+from argparse import ArgumentParser
+from pprint import pformat
+import torch
+import torch.nn.functional as F
 
 def sample_sequence(history, graph,tokenizer, model, args, current_output=None):
     special_tokens_ids = tokenizer.convert_tokens_to_ids(SPECIAL_TOKENS)
@@ -199,12 +191,6 @@ if __name__ == "__main__":
             ## load KB
             train_KB_loader = get_training_file_for_KB(args,i,tokenizer)
             ## finetune
-            # if(conv['domain']=="navigate"):
-            #     args.n_epochs = 1
-            # elif(conv['domain']=="weather"):
-            #     args.n_epochs = 1
-            # else:
-            #     args.n_epochs = 1
             args.n_epochs = 30
 
             model = finetune_model(args,model,train_KB_loader) 
@@ -213,7 +199,6 @@ if __name__ == "__main__":
         for sample in conv['dialogue']:  
             out_ids = sample_sequence(sample['history'],sample["graph"] if args.dataset == "DIALKG" else conv,tokenizer, model, args) 
             out_text = tokenizer.decode(out_ids, skip_special_tokens=True)
-            # print(out_text)
             j_output[conv["id"]].append({"spk":sample['spk'],"text":out_text})
         ## reload original models
         if(len(conv["edges"]) > 0):

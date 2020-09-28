@@ -1,11 +1,4 @@
 from utils.preprocessSMD import load_SMD
-from utils.preprocessMWOZ import load_MWOZ,load_MWOZ_SINGLE
-from utils.preprocessDIALKG import load_DIALKG
-from utils.preprocessTASKMASTER import load_TASKMASTER
-from utils.preprocessBABI import load_BABI, load_DSTC2
-from utils.preprocessCAMRES import load_CAMREST
-# from transformers import (GPT2Tokenizer, GPT2LMHeadModel, GPT2Config, ReformerLMHeadModel, ReformerConfig, DIALOGGPT2LMHeadModel,WEIGHTS_NAME, CONFIG_NAME)
-# from transformers import BertTokenizer, BertForMaskedLM, SimpleTokenizer
 from transformers import (AdamW,WEIGHTS_NAME, CONFIG_NAME)
 from utils.hugging_face import load_model,get_parser,top_filtering, SPECIAL_TOKENS, add_special_tokens_, average_distributed_scalar, make_logdir, build_input_from_segments,add_token_bAbI
 from argparse import ArgumentParser
@@ -50,26 +43,6 @@ def sample_sequence(history, graph,tokenizer, model, args, current_output=None):
             nodes_ids = torch.tensor([temp], device=args.device)
 
         att_mask = None
-        # if(args.unilm):
-        #     att_mask = instance["attention_mask"].unsqueeze(0).unsqueeze(0).to(input_ids.device)
-        #     if(args.graph or args.edge_list):
-        #         att_mask = att_mask.squeeze().squeeze()
-        #         max_l = len(instance["input_ids"]) + len(instance["input_graph_ids"])
-        #         max_r = len(instance["input_graph_ids"])
-        #         mask_padded = torch.zeros(max_l, max_l, dtype=torch.long,device=args.device)
-        #         mask_padded[max_r:len(att_mask[0])+max_r,max_r:len(att_mask[0])+max_r].copy_(att_mask)
-        #         ## add missing one for row
-        #         row_stripe_padded = torch.ones(max_r, max_r+instance["len_token_a"]+1, dtype=torch.long, device=args.device)
-        #         mask_padded[:max_r,:max_r+instance["len_token_a"]+1].copy_(row_stripe_padded)
-        #         ## add missing one for clmn
-        #         cmn_stripe_padded = torch.ones(len(att_mask[0]), max_r, dtype=torch.long, device=args.device)
-        #         mask_padded[max_r:max_r+len(att_mask[0]),:max_r].copy_(cmn_stripe_padded)
-        #         if(args.adj_graph):
-        #             r_net = len(instance["input_graph_networks"]) ## square matrix 
-        #             c_net = len(instance["input_graph_networks"][0]) ## square matrix 
-        #             if(r_net and c_net):
-        #                 mask_padded[:r_net,:r_net].copy_(torch.tensor(instance["input_graph_networks"],dtype=torch.long, device=args.device))
-        #         att_mask = mask_padded.unsqueeze(0).unsqueeze(0)
 
         logits = model(input_ids, token_type_ids=token_type_ids, nodes=nodes_ids, attention_mask=att_mask)
         if isinstance(logits, tuple):  # for gpt2 and maybe others
@@ -103,27 +76,7 @@ if __name__ == "__main__":
     model, tokenizer = load_model(args,load=True)
 
     print("Load Data")
-    if(args.dataset == "SMD"):
-        test, _ = load_SMD(args, tokenizer, test_flag=True)
-    elif(args.dataset == "MWOZ_SINGLE"):
-        _, _, test, _ = load_MWOZ_SINGLE(args, tokenizer, test_flag=True)
-    elif(args.dataset == "MWOZ"):
-        _, _, test, _ = load_MWOZ(args, tokenizer, test_flag=True)
-    elif(args.dataset == "DIALKG"):
-        _, _, test, _ = load_DIALKG(args, tokenizer, test_flag=True)
-    elif(args.dataset == "TASKMASTER"):
-        _, _, test, _ = load_TASKMASTER(args, tokenizer, test_flag=True)
-    elif(args.dataset == "BABI"):
-        _,_, test = load_BABI(args, tokenizer, test_flag=True)
-    elif(args.dataset == "BABI_OOV"):
-        _,_, test = load_BABI(args, tokenizer, test_flag=True, OOV=True)
-    elif(args.dataset == "DSTC2"):
-        _,_, test = load_DSTC2(args, tokenizer, test_flag=True)
-    elif(args.dataset == "CAMREST"):
-        _,_, test = load_CAMREST(args, tokenizer, test_flag=True)
-    else: 
-        print("ERROR: select a dataset with --dataset [SMD|MWOZ|DIALKG]")
-        exit(1)
+    test, _ = load_SMD(args, tokenizer, test_flag=True)
 
     j_output = defaultdict(list)
     for i, conv in tqdm(enumerate(test),total=len(test)):
@@ -132,12 +85,8 @@ if __name__ == "__main__":
             out_text = tokenizer.decode(out_ids, skip_special_tokens=True)
             j_output[conv["id"]].append({"spk":sample['spk'],"text":out_text})
 
-    if(args.dataset == "BABI_OOV"):
-        with open(args.model_checkpoint+'/result_OOV.json', 'w') as fp:
-            json.dump(j_output, fp, indent=4)
-    else:
-        with open(args.model_checkpoint+'/result.json', 'w') as fp:
-            json.dump(j_output, fp, indent=4)
+    with open(args.model_checkpoint+'/result.json', 'w') as fp:
+        json.dump(j_output, fp, indent=4)
 
             
 

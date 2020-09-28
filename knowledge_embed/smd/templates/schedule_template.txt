@@ -1,0 +1,345 @@
+1 what date is my @event_1 and who is attending ?	you have two @event_1 scheduled one on @date_11 with @party_11 and one on @date_12 with @party_12
+2 thanks	my pleasure
+
+1 when is the @event_1 , what is the agenda and who are attending ?	you have two @event_1 scheduled the first is at @time_11 on @date_11 with @party_11 to @agenda_11 and the second is at @time_12 on @date_12 with the @party_12 to @agenda_12
+2 thanks	glad i could help
+
+1 what time is @event_1 and who is it with ?	@event_1 is at @time_11 with @party_11
+2 okay , perfect ! thanks	you are welcome
+
+1 when , where , and what time is my @event_1 , and who will be there ?	your @event_1 to @agenda_11 with @party_11 is on @date_11 at @time_11
+2 okay and where is the @event_1 ?	it s in @room_11
+3 great , thank you !	no problem
+
+1 when is my @event_1 on @date_11	your @event_1 is at @time_11
+
+1 find out some information for my @event_1 , the date	the @event_1 is at @date_11
+2 thanks	you are welcome
+
+1 schedule @event_1	what details shall i add to your @event_1 reminder ?
+2 set it for @date_11 at @time_11 with my @party_11	anything else ?
+3 that is all , thanks !	you are welcome
+
+1 when is my @event_1 and who is going ?	you have five @event_1 scheduled one on @date_11 with your @party_11 , one on @date_12 with @party_12, one on @date_13 with @party_13, another on @date_14 with your @party_14 , and the last on @date_15 with @party_15
+2 thanks for the info	you are welcome
+
+1 when do i have @event_1 planned for	you have @event_1 plans on @date_11
+
+1 i need to find out the time and parties attending my @event_1	i have 3 @event_1 scheduled , with @party_11 , @party_12 , and @party_13 which are you interested in ?
+2 i want to know about the one that @party_12 is joining me at	that @event_1 is at @time_12
+3 thanks	no problem
+
+1 find out the location , date and time for my @event_1	you have two @event_1 scheduled one on @date_11 in @room_11 at @time_11 , and another on @date_12 at @room_12 at @time_12
+2 thanks	you are welcome
+
+1 what is the time and location of my next @event_1 and who will be attending it ?	your next @event_1 is at @time_11 with @party_11 at @room_11 would you like to know the date as well ?
+2 yes please thank you	it s at on @date_11 you are welcome
+
+1 when is my @event_1 and where is it	your @event_1 is @date_11 at @time_11 and it will be in @room_11
+2 thanks	you are welcome
+
+1 what date is my @event_1 and who is attending ?	you have two @event_1 ; one on @date_11 with @party_11 and one on @date_12 with @party_12
+2 thanks for your help	my pleasure
+
+1 where is my @event_1 , which parties will be attending , and what is the @event_1 about ?	your @event_1 with the @party_11 in in @room_11 
+2 please set a reminder for this , thank you !	currently you have three @event_1 schedules the first is in @room_11 with the @party_11 about @agenda_11 the next is in @room_12 with @party_12 about @agenda_12 and the last is in @room_13 with the @party_13 about @agenda_13
+3 thanks !	do you need to add any additional reminders ?
+4 no , that s all !	very well goodbye
+
+1 i need you to find out the time and who is attending my @event_1	you have three @event_1 scheduled one at @time_11 with @party_11 , another at @time_12 with your @party_12 , and the last is at @time_13 with your @party_13 do you need any more info ?
+2 no that s it thank you	you are welcome
+
+1 what day and time is my @event_1 ?	your @event_1 is on @date_11 at @time_11
+2 thank you kindly	you are welcome
+
+1 when and where is my @event_1 and who is attending ?	for which one ? i have two , one at @time_12 on @date_12 and one at @time_11 on @date_11
+2 @time_12 on @date_12	your @event_1 at @time_12 on @date_12 is with the @party_12
+
+1 check calendar for when my @event_1 is	you have a @event_1 @date_11 at @time_11
+
+1 what is the date and time of my @event_1 ?	you have two @event_1 scheduled one on @date_11 at @time_11 and the other on @date_12 at @time_12
+2 thank you	you are welcome
+
+1 what is the location and time of the @event_1 , and who is attending ?	you have two @event_1 scheduled one at @time_11 in @room_11 with the @party_11 and another at @time_12 in @room_12 with the @party_12 do you need the dates as well ?
+
+1 what is the agenda for the @event_1 ?	the purpose of the @event_1 is to @agenda_11
+2 okay perfect what day and time is the @event_1 on ?	the @event_1 is set for @date_11 at @time_11
+
+1 info for @event_1	your @event_1 is on @date_11 at @time_11 , @party_11 will be attending
+2 thank you	you are welcome
+
+1 who will be at my @event_1 and what day is it ?	your @party_11 will be at your @event_1 on @date_11
+
+1 when will my @event_1 results be in	your @event_1 is on @date_11 at @time_11
+2 thank you !	no problem !
+
+1 remind me that i have a @event_1 at @time_11	okay , for what day should i set your @time_11 reminder for a @event_1 ?
+
+1 set a reminder for a @event_1 on @date_11 at @time_11 with the @party_11	okay , scheduling a @event_1 with the @party_11 for @date_11 at @time_11
+2 awesome , thanks	no problem
+
+1 what is the location and time of the @event_1 , and who is attending ?	you have two @event_1 scheduled one at @time_11 in @room_11 with the @party_11 and another at @time_12 in @room_12 with the @party_12 do you need the dates as well ?
+
+1 what is the date and time of my @event_1 ?	you have three @event_1 scheduled one on @date_11 at @time_11 , another on @date_12 at @time_12 , and one more on @date_13 at @time_13
+2 thanks	no problem
+
+1 check to see if i have any @event_1 in the near future	@agenda_11 is scheduled for @date_11 at @time_11 in @room_11
+2 thanks	no problem !
+
+1 what is the date and time of my @event_1 ?	you have two @event_1 scheduled ; one on @date_11 at @time_11 and one on @date_12 at @time_12
+2 that is all	happy to help
+
+1 what is the date of @event_1 and who is coming ?	you have four @event_1 scheduled ; one on @date_11 with @party_11 , one on @date_12 with @party_12 , one on @date_13 with @party_13 , and one on @date_14 with @party_14
+2 thanks	have a great day
+
+1 when is my @event_1 and who is going ?	you have four @event_1 scheduled one on @date_11 with your @party_11 , one on @date_12 with @party_12 , another on @date_13 with your @party_13 , and the last on @date_14 with @party_14
+2 thanks for the info	you are welcome
+
+1 what is the date of my next @event_1 and who will be attending it ?	your next @event_1 is on @date_11 with @party_11 do you need the time also ?
+2 no that will be all , thanks	have a great time
+
+1 what time and date is my @event_1 ?	you have three @event_1 scheduled the first is on @date_11 at @time_11 , the next is on @date_12 at @time_12 , and the last is on @date_13 at @time_13
+2 great , goodbye	goodbye
+
+1 when is my @event_1 and who is going with me ?	you have 3 @event_1 lined up @time_11 on @date_11 with @party_11 , @time_12 on @date_12 with @party_12 , and on @date_13 at @time_13 with @party_13
+
+1 when and where is my @event_1 and who is attending ?	for which one ? i have two , one at @time_12 on @date_12 and one at @time_11 on @date_11
+2 @time_11 on @date_11	your @event_1 at @time_11 on @date_11 is with the @party_11
+
+1 when is the @event_1 , what is the agenda and who are attending ?	you have three @event_1 scheduled the first is at @time_11 on @date_11 with @party_11 to @agenda_11 the second is at @time_12 on @date_12 with the @party_12 to @agenda_12 the third is at @time_13 on @date_13 with the @party_13 to @agenda_13
+2 thanks	glad i could help
+
+1 can you find out the date and parties attending for my @event_1 ?	your @party_11 will be attending your @event_1 on @date_11
+2 thank you	no problem
+
+1 when do i have @event_1 planned for	your @event_1 is at @time_11 @date_11
+
+1 what time and date do you have for my @event_1 ?	four @event_1 are scheduled ; one on @date_11 at @time_11, one on @date_12 at @time_12 , one on @date_13 at @time_13 , and one @date_14 at @time_14
+2 thank you greatly	you are welcome
+
+1 set a reminder for a @event_1 at @time_11 on @date_11 , @date_12 with @party_12	okay , scheduling a @event_1 with your @party_12 for @date_12 , @date_11 at @time_11
+2 thanks	you are welcome
+
+1 find out immediately the location , time , and date for my @event_1	for which one ? i have one in @room_11 at @time_11 on @date_11 , and one in @room_12 at @time_12 on @date_12
+2 that will do just fine , thanks	you are welcome !
+
+1 schedule my @event_1 on @date_11	what time do you want me to schedule your @event_1 for
+
+1 what is the date and location of my @event_1 and who is attending ?	i have you for two @event_1 , one is in @room_11 with the @party_11 on @date_11 , and one is in @room_12 with @party_12 on @date_12
+2 great !	no problem
+
+1 remind me that i have a @event_1 at work on @date_11 at @time_11 in @room_11	okay setting a reminder for you work @event_1 , on @date_11 at @time_11 , in @room_11
+
+1 what day is my @event_1 and with who ?	your @event_1 is on @date_11 with your @party_11
+2 okay wonderful , thanks so much !	you are welcome ! @event_1 starts at @time_11 also
+3 thank you	you are welcome
+
+1 when is my next @event_1	it is @date_11 at @time_11 in @room_11
+
+1 what is the date and time for my @event_1 ?	you have four @event_1 scheduled one is on @date_11 at @time_11 , another is on @date_12 at @time_12 , another is on @date_13 at @time_13 , and the last is on @date_14 at @time_14
+2 thanks	glad i can help
+
+1 do you know who s coming for @event_1 ? and when is it taking place ?	you have two @event_2 scheduled , one for @time_11 on @date_11 with @party_11 , and one for @time_12 on @date_12 with @party_12
+2 okay thanks	you are welcome
+
+1 what is the date , location , and agenda of my next @event_1 ?	your next @event_1 is on @date_11 in @room_11 to @agenda_11
+2 perfect , thanks	you are welcome
+
+1 what date is the @event_1 and who is attending ?	you have 2 @event_1 , one on @date_11 with your @party_11 and one on @date_12 with @party_12
+2 thanks for the info	glad to help
+
+
+1 what is the time and location of my next @event_1 and who will be attending ?	your next @event_1 is at @time_11 in @room_11 with the @party_11
+
+1 when and where is my @event_1 and who is attending ?	for which one ? i have two , one at @time_12 on @date_12 and one at @time_11 on @date_11
+2 @time_11 on @date_11	your @event_1 at @time_11 on @date_11 is with the @party_11
+
+1 schedule a @event_1 at @time_11 , this month on @date_11 with @party_11 to @agenda_11	i will schedule a @event_1 at @time_11 , this month on @date_11 with @party_11 to @agenda_11
+2 thanks	you are always welcome
+
+1 i need to find out the time and parties attending my @event_1	i have 3 @event_1 scheduled , with @party_11 , @party_12 , and @party_13 which are you interested in ?
+2 i want to know about the one that @party_13 is joining me at	that @event_1 is at @time_13
+3 thanks	no problem
+
+1 find out the location , date and time for my @event_1	you have two @event_1 scheduled one on @date_11 in @room_11 at @time_11 , and another on @date_12 at @room_12 at @time_12
+2 thanks	you are welcome
+
+1 what is the date and time for my @event_1 ?	you have five @event_1 scheduled one on @date_11 at @time_11, one on @date_12 at @time_12 , one on @date_13 at @time_13 , one @date_14 at @time_14 , and one @date_15 at @time_15
+2 thanks	glad i can help
+
+1 when is my @event_1 and who is going ?	you have five @event_1 scheduled one on @date_11 with your @party_11 , one on @date_12 with @party_12, one on @date_13 with @party_13, another on @date_14 with your @party_14 , and the last on @date_15 with @party_15
+2 thanks for the info	you are welcome
+
+1 what is the date and time for the @event_1 and what is the agenda ?	you have three @event_1 scheduled one on @date_11 at @time_11 to @agenda_11 another on @date_12 at @time_12 to @agenda_12 and one on @date_13 at @time_13 to @agenda_13
+2 thanks for the info	my pleasure , goodbye
+
+1 set a reminder for my @event_1 at @time_11 on @date_11 with @party_11	okay , setting a reminder for your @event_1 at @time_11 on @date_11 with @party_11
+2 thanks	my pleasure
+
+1 find out some information for my @event_1 , parties joining me and date	okay which one , i have two one is @date_11 with @party_11 and the other is on @date_12 with @party_12 
+2 the one on @date_11	@event_1 is on @date_11 , at @time_11 with @party_12
+3 thanks for your help , goodbye	my pleasure 
+4 that will be all	no problem
+
+1 what time is @event_1	your @event_1 is at @time_11 
+2 thank you	no problem
+
+1 i need to find out the time and the parties attending my @event_1	you have two @event_1 scheduled one at @time_11 with @party_11 and another at @time_12 with @party_12 would you like to know the dates as well ?
+2 no i just needed the times , thank you very much !	you are welcome !
+
+1 what time is the @event_1	you have a @event_1 on @date_11 at @time_11 in @room_11 with the @party_11
+
+1 schedule @event_1	what details shall i add to your @event_1 reminder ? 
+2 please set it for @date_11 at @time_11 it is going to be with @party_11 thank you	reminder set for your @event_1 at @time_11 on @date_11 with @party_11 is there anything else ? 
+3 that is all , thank you	you are welcome
+
+1 i need to find out the time and parties attending my @event_1	i have 3 @event_1 scheduled , with @party_11 , @party_12 , and @party_13 which are you interested in ?
+2 i want to know about the one that @party_11 is joining me at	that @event_1 is at @time_11
+3 thanks	no problem
+
+1 what is the date , agenda , and time of my next @event_1	for which one ? i have two in your calendar , one on @date_11 to @agenda_11 at @time_11 , the other is @date_12 to @agenda_12 at @time_12
+
+1 what is the date and time of my @event_1 ?	for which one ? i have three , one with @party_11 at @time_11 on @date_11 one with your @party_12 at @time_12 on @date_12 and one with your @party_13 at @time_13 on @date_13
+2 thanks , that will do just fine	you are welcome
+
+1 what @event_1 are on my schedule , what are the dates , and who are they with ?	you have two @event_1 on your schedule , one on @date_11 with your @party_11 , and one on @date_12 with your @party_12
+2 thank you	you are welcome
+
+1 what is the date of @event_1 and who is coming ?	you have five @event_1 scheduled ; one on @date_11 at @time_11, one on @date_12 at @time_12 , one on @date_13 at @time_13 , one @date_14 at @time_14 , and one @date_15 at @time_15
+2 thanks	have a great day
+
+1 what is the date , time , and agenda of my next @event_1 ?	you next @event_1 is @date_11 at @time_11 to discuss @agenda_11 in @room_11
+2 thank you	you are welcome
+
+1 schedule a @event_1 with @party_11 for @time_11 @date_11 to @agenda_11	okay i scheduled a @event_1 with @party_11 at @time_11 on @date_11 to @agenda_11
+2 thank you	you are welcome
+
+1 what time is my @event_1 and who will be going ?	do you mean your @event_1 on @date_11 or @date_12 ?
+2 i am not sure what days are those ?	the one at @time_11 is on @date_11 and @party_11 will be attending , and the one at @time_12 is on @date_12 and @party_12 will be attending
+3 thanks	you are welcome
+
+1 what is the date and time for my @event_1 ?	you have two @event_1 scheduled the first is on @date_11 at @time_11 and the next is on @date_12 at @time_12
+2 thank you	it is my pleasure
+
+1 check calendar for when my @event_1 is	you have a @event_1 @date_11 at @time_11
+
+1 schedule @event_1 with @party_11 at @time_11 on @date_11 of this month	setting a reminder for @event_1 with @party_11 on @date_11 of this month at @time_11
+2 thanks	you are welcome anything else ?
+3 that s all for now	thank you
+
+1 schedule @event_1 with @party_11 @date_11 at @time_11	@event_1 with @party_11 scheduled for @date_11 at @time_11
+
+1 set a schedule for @event_1 at @time_11 , @date_11 with @party_11	@event_1 with your @party_11 on @date_11 at @time_11 is added to the schedule
+2 thank you !	have a great day
+
+1 when is my @event_1 and who is attending ?	two are scheduled ; one on @date_11 at @time_11 with @party_11 and one on @date_12 at @time_12 with @party_12
+2 thanks	my job , my pleasure
+
+1 car , schedule a reminder for a @event_1 at @time_11 , @date_11 with @party_11	setting a reminder for @event_1 at @time_11 on @date_11 with @party_11
+
+1 please tell me what dates my @event_1 events are	you have an event on @date_11 at @time_11 with @party_11 and an even on @date_12 at @time_12 with @party_12
+2 great , thank you	happy to help
+
+1 please tell me what time my @event_1 is and who will be attending	your upcoming @event_1 is at @time_11 with @party_11
+2 thank you	you are welcome
+
+1 what time and date is my @event_1 ?	you have a @event_1 on @date_11 , @date_12 , and @date_13 for which one are you asking about ?
+2 the one on @date_11	the @event_1 on @date_11 is at @time_11
+3 thank you !	happy to help
+
+1 what time and date is my next @event_1 ?	your next @event_1 is scheduled for @date_11 at @time_11
+2 thank you	you are welcome
+
+1 what time and date is my @event_1 ?	two @event_1 are set in your calendar ; one on @date_11 on @time_11 and one on @date_12 at @time_12
+2 thanks	my pleasure
+
+1 what time and date is my @event_1 and what is the agenda ?	which one ? i have two , one on @date_11 at @time_11 to @agenda_11 , and one on @date_12 at @time_12 to @agenda_12
+2 it was the one on @date_11 , thank you !	you are welcome
+
+1 car , remind me to @event_1 at @time_11 , with @party_11	reminder set to @event_1 at @time_11 with @party_11
+2 thanks	you are welcome
+
+1 who is attending the @event_1 and what date is it ?	@party_11 is attending the @event_1 on @date_11 , @party_12 on @date_12 , @party_13 on @date_13 , and @party_14 on @date_14
+
+1 what time do i have to @event_1 and who will be here ?	@time_11 is the time scheduled to @event_1 and your @party_11 will be there
+2 okay wonderful , thank you !	you are welcome
+
+1 when should i @event_1 next	you should @event_1 next on @date_11 at @time_11
+2 please set a reminder for @event_1	reminder has been set
+3 thanks	you are welcome
+
+1 schedule a reminder to @event_1 with my @party_11 on @date_11 at @time_11	okay , scheduling a reminder to @event_1 with your @party_11 on @date_11 at @time_11
+2 thanks !	you are welcome
+
+1 i @event_1 on @date_11	setting a reminder to @event_1 on @date_11 , what time should i add ?
+2 please set it for @time_11 my @party_11 will also be there	okay , setting a reminder to @agenda_11 on @date_11 at @time_11 with your @party_11
+3 great , i appreciate it thanks !	happy to help
+
+1 what is the date and time i should @event_1 ?	you have two @event_1 events scheduled one on @date_11 at @time_11 and the other on @date_12 at @time_12
+2 thanks a million	you are always welcome
+
+1 please remind me to @event_1 at @time_11 @date_11 with my @party_11	setting a reminder to @event_1 with your @party_11 @date_11 at @time_11
+
+1 please set a reminder that i have a @event_1 with the @party_11 on @date_11 at @time_11	okay setting your reminder for your @event_1 with the @party_11 on @date_11 at @time_11
+2 thank you	glad to help
+
+1 find out the parties that are attending my @event_1 also find the time	your @event_1 is scheduled for @date_11 at @time_11 with @party_11
+2 thank you buddy	you are welcome friend
+
+1 schedule @event_1 with @party_11 please	for what date and time ?
+2 please set it for @date_11 of this month at @time_11	great , i have that all set up for you can i help with anything else ?
+3 that is all my car , thanks	you are welcome
+
+1 schedule a @event_1 for @time_11 on @date_11 with my @party_11	okay , i am scheduling a @event_1 with your @party_11 on @date_11 at @time_11
+2 thank you	you are very welcome
+
+1 schedule a @event_1 for @date_11 at @time_11 with my @party_11	reminder for @event_1 with @party_11 on @date_11 at @time_11 set
+
+1 i would like to know what time and day my @event_1 is	your @event_1 is on @date_11 at @time_11
+2 perfect , thanks !	no problem
+
+1 what is the date of my @event_1 and who is attending ?	i have two , which would you like to know ? the one on @date_11 at @time_11 with @party_11 or the one on @date_12 at @time_12 with @party_12 ?
+2 both	your @event_1 activites are scheduled on @date_11 at @time_11 with @party_11 and @date_12 at @time_12 with @party_12
+
+1 when is the next @event_1 and who is coming with me ?	you have one @event_1 on @date_11 and one on @date_12 which one are you interested in ?
+2 please give me the information for @date_11	your @event_1 on @date_11 is at @time_11 with @party_11
+3 please give me the information for @date_12	your @event_1 on @date_12 is at @time_12 with @party_12
+4 thanks	you are welcome
+
+1 what time is @event_1 and who is coming with me ?	you have two @event_1 schedules the first is on @date_11 at @time_11 with @party_11 , and the second is on @date_12 at @time_12 with @party_12
+2 thank you	you are welcome
+
+1 can you schedule a reminder for my @event_1 at @time_11 @date_11 , with @party_11 ?	reminder for @event_1 on @date_11 at @time_11 with @party_11 is set
+2 awesome !	you are welcome need help with anything else ?
+3 nope	happy to help
+
+1 can you tell me what time my next @event_1 is and if anyone is joining me ?	you have three @event_1 scheduled with the @event_1 : one on @date_11 , one on @date_12 , and one on @date_13 for which one would you like to receive more info ?
+2 i want more info for the appointment on @date_11	yes , it is at @time_11 with your @party_11
+
+1 when is @event_1 and who is attending ?	you have three @event_1 scheduled ; one on @date_11 at @time_11 with your @party_11 , another on @date_12 at @time_12 with @party_12 , and the last one on @date_13 at @time_13 with @party_13
+2 thanks for the info	you are welcome
+
+1 when are we getting together for @event_1 ? and who s coming ?	got it
+2 when is @event_1 and who s coming ?	do you want the information for the @event_1 on @date_11 or @date_12 ?
+3 @date_1	your next @event_1 is going to be on @date_11 at @time_11 with your @party_11
+4 thanks	you are welcome
+
+1 what is the date and time of my next @event_1 ?	your next @event_1 is @date_11 at @time_11
+
+1 what time is my @event_1 and at what location ?	your @event_1 is scheduled on @date_11 at @time_11
+2 where is the @event_1 ?	your @event_1 is in the @room_11
+
+1 please tell me about the time and date my next @event_1 is scheduled for and what i hope to accomplish it	your next @event_1 is @date_11 at @time_11 its purpose is to @agenda_11
+2 where is the location of the @event_1 ?	the location is the @room_11
+
+1 i need information for my upcoming @event_1	your @event_1 with the @party_11 is on @date_11 at @time_11 in the @room_11 to @agenda_11
+2 thank you	i m here to serve
+
+1 where and on what day is my @event_1 , and what is the agenda ?	you currently have 3 @event_1 scheduled the first is on @date_11 in @room_11 to @agenda_11 the second i on @date_12 in @room_12 to @agenda_12 the last is on @date_13 in @room_13 to @agenda_13
+2 thanks	you are welcome
+
+1 i need to know when the @event_1 is , where it is , and who is attending	the @event_1 is located in the @room_11 at @time_11 with your @party_11
+2 thank you !	anything else ?
+3 that is all , thank you	happy to help
+
+#

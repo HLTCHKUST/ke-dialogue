@@ -248,10 +248,10 @@ def generate_SMD_template(file_path, kb_file_path, rec_delex=False, verbose=Fals
 
     print("Number of convs: {} unique convs: {} unique sents: {}".format(num_conversation, len(unique_conversation), len(unique_sentences)))
 
-files = ['SMD/train.txt']
+files = ['data/train.txt']
 for file_path in files:
     print("> Delexicalization")
-    generate_SMD_template(file_path, kb_file_path='SMD/kvret_entities.json', rec_delex=False)
+    generate_SMD_template(file_path, kb_file_path='data/kvret_entities.json', rec_delex=False)
     print("> Recorded Delexicalization")
-    generate_SMD_template(file_path, kb_file_path='SMD/kvret_entities.json', rec_delex=True)
+    generate_SMD_template(file_path, kb_file_path='data/kvret_entities.json', rec_delex=True)
     print("")
