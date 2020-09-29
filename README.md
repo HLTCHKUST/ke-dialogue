@@ -45,10 +45,18 @@ Download the preprocessed [**dataset**](https://drive.google.com/open?id=1p5FgDc
 
 ***Fine-tune GPT-2***
 
-We provide the [**checkpoint**](https://drive.google.com/open?id=1CEtbwdosNqEGCB-zNntZ6a_UYCFx-SjI) of GPT-2 model fine-tuned on SMD training set. You can also choose to train the model by yourself using the following command.
+We provide the [**checkpoint**](https://drive.google.com/open?id=1v7P-UulLBTwdW2EIk2Jz0vdPKlpZlLUI) of GPT-2 model fine-tuned on SMD training set. Download the checkpoint and put it under `./modeling` folder.
 
 ```console
-❱❱❱ python ./modeling/smd/main.py --task mt --no_sample --model_checkpoint $model_path
+❱❱❱ mkdir ./knowledge_embed/smd/runs
+❱❱❱ unzip ./knowledge_embed/smd/SMD_gpt2_graph_False_adj_False_edge_False_unilm_False_flattenKB_False_historyL_1000000000_lr_6.25e-05_epoch_10_weighttie_False_kbpercentage_0_layer_12.zip -d ./knowledge_embed/smd/runs
+```
+
+You can also choose to train the model by yourself using the following command.
+
+```console
+❱❱❱ cd ./modeling/smd
+❱❱❱ python main.py --dataset SMD --graph False --adj_path False --edge_list False --unilm False --flatten_KB False --max_history 1000000000 --lr 6.25e-05 --n_epochs 10 --weight_tie False --kbpercentage 0 --layers 12
 ```
 
 ***Prepare Knowledge-embedded dialogues***
@@ -60,13 +68,23 @@ Firstly, we need to build databases for SQL query.
 ❱❱❱ python generate_dialogues_SMD.py --build_db --split test
 ```
 
-Then we generate dialogues based on pre-designed templates by domains. The following command enables you to generate dialogues in `weather` domain. Please replace `weather` with `navigate` or `schedule` in `dialogue_path` and `domain` arguments if you want to generate dialogues in the other two domains.
+Then we generate dialogues based on pre-designed templates by domains. The following command enables you to generate dialogues in `weather` domain. Please replace `weather` with `navigate` or `schedule` in `dialogue_path` and `domain` arguments if you want to generate dialogues in the other two domains. You can also change number of templates used in relexicalization process by changing the argument `num_augmented_dialogue`.
 
 ``` console
-❱❱❱ python generate_dialogues_SMD.py --split test --dialogue_path ./templates/weather_template.txt --domain weather --num_augmented_dialogue 100 --output_folder ./data/test
+❱❱❱ python generate_dialogues_SMD.py --split test --dialogue_path ./templates/weather_template.txt --domain weather --num_augmented_dialogue 100 --output_folder ./SMD/test
 ```
 
+***Adapt fine-tuned GPT-2 model on the test set***
 
+``` console
+❱❱❱ python evaluate_finetune.py --dataset SMD --model_checkpoint runs/SMD_gpt2_graph_False_adj_False_edge_False_unilm_False_flattenKB_False_historyL_1000000000_lr_6.25e-05_epoch_10_weighttie_False_kbpercentage_0_layer_12 --top_k 1 --eval_indices 0,303 --filter_domain ""
+```
+
+You can also speed up the finetuning process by running experiments parallelly. Please modify the GPU setting in #L14 of the [code](https://github.com/HLTCHKUST/ke-dialogue/blob/master/modeling/smd/runner_expe_SMD.py#L14).
+
+``` console
+❱❱❱ python runner_expe_SMD.py 
+```
 
 ### MWOZ
 
