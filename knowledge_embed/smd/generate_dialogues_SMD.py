@@ -77,12 +77,6 @@ Type2NumKB = {
     "test": {"schedule": 100, "weather": 100, "navigate": 100,},
 }
 
-DIST = {
-    "schedule": {},
-    "weather": {},
-    "navigate": {},
-}
-
 def Key2Idx(dialog_type, key):
     if dialog_type in ["navigate", "location information"]:
         index = navigate_keys.index(key)
@@ -441,12 +435,6 @@ def generate_weather_dialogues(kb_path, dialogue, delex_to_chat_dict, delex_reso
             
     # consider constraints that are not detected in delex process
     # go through ```dialogue``` to match key words
-    # TODO enable weekly_negation
-    # for turn_id, request, response in dialogue:
-    #     for sent in [request.str, response.str]:                         
-    #         if negation and "@date" in sent and "@weather_attribute_10" in sent:
-    #             constraints["negation"] = 1 # not weekly negation
-
     base_resolved_dict = fill_constraints(constraints)
     
     # only handle "1" group TODO extend to "2"
@@ -632,7 +620,7 @@ def generate_dialogues(kb_path, meta_dialogue, rain_record):
     return str_dialogues
 
 
-def generte_dialog_test_set(d, knowledge_folder, dialogue_path, num_augmented_dialogue, kb_types, split, output_folder, distribution):
+def generte_dialog_test_set(d, knowledge_folder, dialogue_path, num_augmented_dialogue, kb_types, split, output_folder):
     num_sample = len(kb_types[split])
     for i in tqdm(range(num_sample), total=num_sample, ncols=100):
         domain = kb_types[split][i]
@@ -667,35 +655,21 @@ def generte_dialog_test_set(d, knowledge_folder, dialogue_path, num_augmented_di
             str_dialogue = generate_dialogues(kb_path, meta_dialogue, rain_record)
             if str_dialogue is not None:
                 str_dialogues.extend(str_dialogue)
-                if distribution:
-                    if template_id not in DIST[domain]:
-                        DIST[domain][template_id] = []
-                    DIST[domain][template_id].append(len(str_dialogue))
-            else:
-                if distribution:
-                    if template_id not in DIST[domain]:
-                        DIST[domain][template_id] = []
-                    DIST[domain][template_id].append(0)
 
         assert len(str_dialogues) > 0
         dump_dialogue_to_file(str_dialogues, os.path.join(output_folder, f"dialog_{i}.txt"))
 
-    if distribution:
-        with open(f"./SMD/distribution_{split}.json", "w") as f:
-            json.dump(DIST, f)
-
 if __name__ == "__main__":
     # Parse args
     parser = argparse.ArgumentParser(description='Generation SMD')
-    parser.add_argument('--dialogue_path', type=str, default='./SMD/weather_template.txt', help='dialog path, default: ./SMD/dialog_manual_template.txt')
-    parser.add_argument('--knowledge_folder', type=str, default='./SMD/KBs-test', help='knowledge base folder, default: ./SMD/KBs')
+    parser.add_argument('--dialogue_path', type=str, default='./templates/weather_template.txt', help='dialog path, default: ./templates/weather_template.txt')
+    parser.add_argument('--knowledge_folder', type=str, default='./SMD/KBs', help='knowledge base folder, default: ./SMD/KBs')
     parser.add_argument('--output_folder', type=str, default='./SMD', help='output folder path for generation result, default: ./SMD')
-    parser.add_argument('--domain', type=str, default="navigate", help='dialogue domain and KB domain, default: schedule')
+    parser.add_argument('--domain', type=str, default="weather", help='dialogue domain and KB domain, default: weather')
     parser.add_argument('--num_augmented_knowledge', type=int, default=10, help='number of augmented knowledge, default: 10')
     parser.add_argument('--num_augmented_dialogue', type=int, default=10, help='number of augmented dialogue, default: 10')
     parser.add_argument('--random_seed', type=int, default=0, help='random seed for reproducible sampling, default: 0')
     parser.add_argument('--split', type=str, default="train", help='KB source, default: train')
-    parser.add_argument('--distribute', action="store_true", help='whether to do generated data statistic')
     parser.add_argument('--build_db', action="store_true", help='whether to do build database from the dataset')
     args = vars(parser.parse_args())
 
@@ -706,8 +680,7 @@ if __name__ == "__main__":
     # Build DB if needed
     if args["build_db"]:
         build_db(args["knowledge_folder"], args["split"])
-    
-    exit()
+        exit()
     
     # Start Timer
     start = timeit.default_timer()  
@@ -735,7 +708,7 @@ if __name__ == "__main__":
         # load kb_types json file
         with open(os.path.join(knowledge_folder, "kb_types.json"), "r") as f:
             kb_types = json.load(f)
-        generte_dialog_test_set(domain, knowledge_folder, dialogue_path, num_augmented_dialogue, kb_types, split, output_folder, args["distribute"])
+        generte_dialog_test_set(domain, knowledge_folder, dialogue_path, num_augmented_dialogue, kb_types, split, output_folder)
         
         # Print Execution time
         stop = timeit.default_timer()

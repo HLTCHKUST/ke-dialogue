@@ -130,6 +130,6 @@ rows.append({"Model":"T50","BLEU":13.01,"F1":56.43,"F1 navigate":50.04,"F1 weath
 rows.append({"Model":"T75","BLEU":13.67,"F1":58.79,"F1 navigate":52.56,"F1 weather":56.39,"F1 schedule":71.89})
 rows.append({"Model":"T100","BLEU":0,"F1":0,"F1 navigate":53.53,"F1 weather":0,"F1 schedule":72.58})
 
-rows.append(score_SMD("GPT2+FINE",'runs/SMD_gpt2_graph_False_adj_False_edge_False_unilm_False_flattenKB_False_historyL_1000000000_lr_6.25e-05_epoch_10_weighttie_False_kbpercentage_0_layer_12/all_results_rerun.json'))
+rows.append(score_SMD("GPT2+FINE",'runs/SMD_gpt2_graph_False_adj_False_edge_False_unilm_False_flattenKB_False_historyL_1000000000_lr_6.25e-05_epoch_10_weighttie_False_kbpercentage_0_layer_12/all_results.json'))
 
 print(tabulate(rows,headers="keys",tablefmt='latex',floatfmt=".2f"))

@@ -6,7 +6,7 @@ import numpy as np
 import collections
 import torch
 from collections import defaultdict
-from utils import get_loader, test_dataloader
+from hugging_face import get_loader, test_dataloader
 import ast
 from tqdm import tqdm
 
@@ -116,49 +116,43 @@ def generate_template(global_entity, sentence, sent_ent, kb_arr, domain):
             if word not in sent_ent:
                 sketch_response.append(word)
             else: 
-                ent_type = None
-                # if domain != 'weather':
-                #     for kb_item in kb_arr:
-                #         if word == kb_item[0]:
-                #             ent_type = kb_item[1]
-                if ent_type == None:
-                    for key in global_entity.keys():
-                        if key!='poi':
-                            global_entity[key] = [x.lower() for x in global_entity[key]]
-                            if word in global_entity[key]:
-                                if word not in counter[key]:
-                                    counter[key].append(word)
-                                ent_type = key+"_"+str(counter[key].index(word))
-                                break
-                            elif word.replace('_', ' ') in global_entity[key]:
-                                if word not in counter[key]:
-                                    counter[key].append(word)
-                                ent_type = key+"_"+str(counter[key].index(word))
-                                break
-                        else:
-                            poi_list = [d['poi'].lower() for d in global_entity['poi']]
-                            if word in poi_list:
-                                if word not in counter[key]:
-                                    counter[key].append(word)
-                                ent_type = key+"_"+str(counter[key].index(word))
-                                break
-                            elif word.replace('_', ' ') in poi_list:
-                                if word not in counter[key]:
-                                    counter[key].append(word)
-                                ent_type = key+"_"+str(counter[key].index(word))
-                                break
-                            
-                            address_list = [d['address'].lower() for d in global_entity['poi']]
-                            if word in address_list:
-                                if word not in counter['poi_address']:
-                                    counter['poi_address'].append(word)
-                                ent_type = "poi_address_"+str(counter['poi_address'].index(word))
-                                break
-                            elif word.replace('_', ' ') in address_list:
-                                if word not in counter['poi_address']:
-                                    counter['poi_address'].append(word)
-                                ent_type = "poi_address_"+str(counter['poi_address'].index(word))
-                                break
+                for key in global_entity.keys():
+                    if key!='poi':
+                        global_entity[key] = [x.lower() for x in global_entity[key]]
+                        if word in global_entity[key]:
+                            if word not in counter[key]:
+                                counter[key].append(word)
+                            ent_type = key+"_"+str(counter[key].index(word))
+                            break
+                        elif word.replace('_', ' ') in global_entity[key]:
+                            if word not in counter[key]:
+                                counter[key].append(word)
+                            ent_type = key+"_"+str(counter[key].index(word))
+                            break
+                    else:
+                        poi_list = [d['poi'].lower() for d in global_entity['poi']]
+                        if word in poi_list:
+                            if word not in counter[key]:
+                                counter[key].append(word)
+                            ent_type = key+"_"+str(counter[key].index(word))
+                            break
+                        elif word.replace('_', ' ') in poi_list:
+                            if word not in counter[key]:
+                                counter[key].append(word)
+                            ent_type = key+"_"+str(counter[key].index(word))
+                            break
+                        
+                        address_list = [d['address'].lower() for d in global_entity['poi']]
+                        if word in address_list:
+                            if word not in counter['poi_address']:
+                                counter['poi_address'].append(word)
+                            ent_type = "poi_address_"+str(counter['poi_address'].index(word))
+                            break
+                        elif word.replace('_', ' ') in address_list:
+                            if word not in counter['poi_address']:
+                                counter['poi_address'].append(word)
+                            ent_type = "poi_address_"+str(counter['poi_address'].index(word))
+                            break
 
                 if ent_type == None:
                     print(sentence, sent_ent, kb_arr, domain)
@@ -204,17 +198,12 @@ def delex_SMD(file_name, global_entity, max_line = None):
 
                     conversation.append((nid, usr_delex, sys_delex))
     
-    # for (user, response) in conversation:
-    #     print("U: ", user)
-    #     print("R: ", response)
-    #     print("\n")
 
     num_conversation, unique_conversation, temp_conversation = 0, {}, []
     unique_sentences = {}
 
     out_file_path = file_name.replace(".txt", "_delex.txt")
 
-    # with open(out_file_path + "_template.txt", "w+") as f_out_template:
     with open(out_file_path, "w+") as f_out:
         print("Saving to: {}".format(out_file_path))
 
@@ -227,10 +216,6 @@ def delex_SMD(file_name, global_entity, max_line = None):
 
                     # check if the dialogue is unique
                     key = " ".join(t[1] + " " + t[2] for t in temp_conversation)
-                    # if key not in unique_conversation:
-                    #     for conv in temp_conversation:
-                    #         f_out_template.write("{} {}\t{}\n".format(conv[0], conv[1], conv[2]))
-                    #     f_out_template.write("\n")
                     unique_conversation[key] = True
 
                     temp_conversation = []
@@ -243,10 +228,6 @@ def delex_SMD(file_name, global_entity, max_line = None):
             if i == len(conversation)-1 and temp_conversation != "": 
                 # check if the dialogue is unique
                 key = " ".join(t[1] + " " + t[2] for t in temp_conversation)
-                # if key not in unique_conversation:
-                #     for conv in temp_conversation:
-                #         f_out_template.write("{} {}\t{}\n".format(conv[0], conv[1], conv[2]))
-                #     f_out_template.write("\n")
                 unique_conversation[key] = True
 
                 num_conversation += 1
@@ -256,11 +237,10 @@ def delex_SMD(file_name, global_entity, max_line = None):
                     
     
 if __name__ == "__main__":
-    # test_json = json.load(open("data/SMD/test.json"))
-    global_entity = json.load(open("data/SMD/kvret_entities.json"))
+    global_entity = json.load(open("SMD/kvret_entities.json"))
 
-    delex_SMD("data/SMD/train.txt", global_entity)
-    # delex_SMD("data/SMD/dev.txt", global_entity)
-    # delex_SMD("data/SMD/test.txt", global_entity)
+    delex_SMD("SMD/train.txt", global_entity)
+    delex_SMD("SMD/dev.txt", global_entity)
+    delex_SMD("SMD/test.txt", global_entity)
 
     print("Yay")
