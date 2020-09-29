@@ -266,7 +266,7 @@ class BABI7Lexicalizer():
 
 if __name__ == '__main__':
     # Sample Command:
-    # python generate_dialogues_babi5.py --dialogue_path ./dialog-bAbI-tasks/dialog-babi-task5trn_record-delex.txt --knowledge_path ./dialog-bAbI-tasks/dialog-babi-kb-all.txt --output_folder ./output --num_augmented_knowledge 10 --num_augmented_dialogue 10 --random_seed 0
+    # python generate_dialogues_CAMREST.py --dialogue_path ./CamRest/train_record-delex.txt --knowledge_path ./CamRest/KB.json --output_folder ./output --num_augmented_knowledge 10 --num_augmented_dialogue 10 --random_seed 0
 
     # Parse args
     parser = argparse.ArgumentParser(description='Generation BABI5')

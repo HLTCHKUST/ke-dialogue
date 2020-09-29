@@ -32,14 +32,14 @@ In addition, our code also includes `fp16` support with `apex`. You can find the
 ## Experiments
 ### bAbI-5
 ***Dataset***
-Download the preprocessed **dataset** inside the `./knowledge_embed/babi5` folder via
+Download the preprocessed [**dataset**](https://drive.google.com/file/d/1sARfILgqVeqY7sTkkjX2MLHeWhp0q-_L/view?usp=sharing) and put the zip file inside the `./knowledge_embed/babi5` folder. Extract the zip file by executing
 
 ```console
 ❱❱❱ cd ./knowledge_embed/babi5
-❱❱❱ svn checkout https://github.com/HLTCHKUST/Mem2Seq/trunk/data/dialog-bAbI-tasks/ 
+❱❱❱ unzip dialog-bAbI-tasks.zip
 ```
 
-Generate the delexicalized meta data from bAbI-5 dataset via
+Generate the delexicalized dialogues from bAbI-5 dataset via
 ```console
 ❱❱❱ python3 generate_delexicalization_babi.py
 ```
@@ -63,11 +63,23 @@ We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on bAbI training
 ### CamRest
 ***Dataset***
 
-Download the preprocessed [**dataset**](https://drive.google.com/file/d/1TIo74qjRiGeZNOiLKWit72a98lgv75MN/view) and put the zip file under `./knowledge_embed/camrest` folder and unzip via
+Create directory ``
+
+Download the preprocessed [**dataset**](https://drive.google.com/file/d/1rmKB4RUJCHrlbqAuxXbcLLjQiPxAq4qq/view?usp=sharing) and put the zip file under `./knowledge_embed/camrest` folder. Unzip the zip file by executing
 
 ```console
 ❱❱❱ cd ./knowledge_embed/camrest
 ❱❱❱ unzip CamRest.zip
+```
+
+Generate the delexicalized dialogues from CamRest dataset via
+```console
+❱❱❱ python3 generate_delexicalization_CAMREST.py
+```
+
+Generate the lexicalized data from CamRest dataset via
+```console
+❱❱❱ python generate_dialogues_CAMREST.py --dialogue_path ./CamRest/train_record-delex.txt --knowledge_path ./CamRest/KB.json --output_folder <output_path> --num_augmented_knowledge <num_augmented_knowledge> --num_augmented_dialogue <num_augmented_dialogues> --random_seed 0
 ```
 
 ***Fine-tune GPT-2***
