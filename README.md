@@ -57,7 +57,7 @@ We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on bAbI training
 
 ```console
 ❱❱❱ cd ./modeling/babi5
-❱❱❱ python main.py --task mt --no_sample --model_checkpoint gpt2
+❱❱❱ python main.py --model_checkpoint gpt2 --dataset BABI
 ```
 
 ### CamRest
@@ -77,7 +77,7 @@ We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on CamRest train
 
 ```console
 ❱❱❱ cd ./modeling/camrest/
-❱❱❱ python main.py --model_checkpoint gpt2 --dataset BABI
+❱❱❱ python main.py --model_checkpoint gpt2 --dataset CAMREST
 ```
 
 ### SMD 
