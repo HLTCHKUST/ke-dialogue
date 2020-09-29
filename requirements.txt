@@ -1,3 +1,12 @@
+importlib-metadata>=0.12
+attrs>=17.4.0
+docutils>=0.12
+Pygments>=2.0
+Jinja2>=2.10.1
+ftfy
+nltk
+spacy<2.2,>=2.1.0
+tensorboardX>=1.2
 numpy==1.17.4
 pandas==1.0.3
 tabulate==0.8.7

@@ -227,28 +227,29 @@ def generate_babi_template(file_path, kb_file_path, task_id=5, rec_delex=False, 
 
     print("Number of convs: {} unique convs: {} unique sents: {}".format(num_conversation, len(unique_conversation), len(unique_sentences)))
 
-print('#' * 50)
-print("Dataset: dialog-babI-task5")
-print('#' * 50)
+if __name__ == '__main__':
+    print('#' * 50)
+    print("Dataset: dialog-babI-task5")
+    print('#' * 50)
 
-files = ['dialog-bAbI-tasks/dialog-babi-task5trn.txt', 'dialog-bAbI-tasks/dialog-babi-task5dev.txt']
+    files = ['dialog-bAbI-tasks/dialog-babi-task5trn.txt', 'dialog-bAbI-tasks/dialog-babi-task5dev.txt']
 
-for file_path in files:
-    print("> Delexicalization")
-    generate_babi_template(file_path, kb_file_path='dialog-bAbI-tasks/dialog-babi-kb-all.txt', task_id=5, rec_delex=False)
-    print("> Recorded Delexicalization")
-    generate_babi_template(file_path, kb_file_path='dialog-bAbI-tasks/dialog-babi-kb-all.txt', task_id=5, rec_delex=True)
-    print("")
+    for file_path in files:
+        print("> Delexicalization")
+        generate_babi_template(file_path, kb_file_path='dialog-bAbI-tasks/dialog-babi-kb-all.txt', task_id=5, rec_delex=False)
+        print("> Recorded Delexicalization")
+        generate_babi_template(file_path, kb_file_path='dialog-bAbI-tasks/dialog-babi-kb-all.txt', task_id=5, rec_delex=True)
+        print("")
 
-print('#' * 50)
-print("Dataset: dialog-babI-task6")
-print('#' * 50)
+    print('#' * 50)
+    print("Dataset: dialog-babI-task6")
+    print('#' * 50)
 
-files = ['dialog-bAbI-tasks/dialog-babi-task6trn.txt', 'dialog-bAbI-tasks/dialog-babi-task6dev.txt']
+    files = ['dialog-bAbI-tasks/dialog-babi-task6trn.txt', 'dialog-bAbI-tasks/dialog-babi-task6dev.txt']
 
-for file_path in files:
-    print("> Delexicalization")
-    generate_babi_template(file_path, kb_file_path='dialog-bAbI-tasks/dialog-babi-task6-dstc2-kb.txt', task_id=6, rec_delex=False, verbose=False)
-    print("> Recorded Delexicalization")
-    generate_babi_template(file_path, kb_file_path='dialog-bAbI-tasks/dialog-babi-task6-dstc2-kb.txt', task_id=6, rec_delex=True, verbose=False)
-    print("")
+    for file_path in files:
+        print("> Delexicalization")
+        generate_babi_template(file_path, kb_file_path='dialog-bAbI-tasks/dialog-babi-task6-dstc2-kb.txt', task_id=6, rec_delex=False, verbose=False)
+        print("> Recorded Delexicalization")
+        generate_babi_template(file_path, kb_file_path='dialog-bAbI-tasks/dialog-babi-task6-dstc2-kb.txt', task_id=6, rec_delex=True, verbose=False)
+        print("")

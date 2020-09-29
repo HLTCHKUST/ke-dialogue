@@ -193,65 +193,8 @@ for f in glob.glob("runs/*"):
         else:
             d_name,model,_,graph,_,adj,_,edge,_,unilm,_,flattenKB,_,hist_L,_,LR,_,epoch,_,wt,_,kb,_,lay = params
 
-
         st = model.replace("gpt2-bAbI","GPT2")
-        # if(eval(graph)): st+= "+NODE "
-        # if(eval(adj)): st+= "+ADJ "
-        # if(eval(edge)): st+= "+EDGES "
-        # if(eval(unilm)): st+= "+UNI "
-        # if(eval(flattenKB)): st+= "+KB "
-        # if(eval(lay)): st+= f"+L {lay}"
-        # # st+= f"+E{epoch} "
-        # st+= f"+KB {kb} "
         rows_BABI.append(score_BABI(st,f+'/result.json',OOV=False,layer=lay,KB=kb))
         rows_BABI.append(score_BABI(st+" OOV",f+'/result_OOV.json',OOV=True,layer=lay,KB=kb))
-    # if("DSTC" in f and os.path.isfile(f+'/result.json')):
-    #     d_name,model,_,graph,_,adj,_,edge,_,unilm,_,flattenKB,_,hist_L,_,LR,_,epoch,*_ = f.split("/")[1].split("_")
-    #     st = model
-    #     if(eval(graph)): st+= "+NODE "
-    #     if(eval(adj)): st+= "+ADJ "
-    #     if(eval(edge)): st+= "+EDGES "
-    #     if(eval(unilm)): st+= "+UNI "
-    #     if(eval(flattenKB)): st+= "+KB "
-    #     st+= f"+E{epoch} "
-    #     rows_DSTC.append(score_DSTC2(st,f+'/result.json'))
+    
 print(tabulate(rows_BABI,headers="keys",tablefmt='latex',floatfmt=".2f",numalign="center"))
-# print(tabulate(rows_DSTC,headers="keys",tablefmt='simple',floatfmt=".2f"))
-
-# rows_BABI = sorted(rows_BABI, key = lambda r: int(r["KB"]))
-# x = [int(r["KB"]) for r in rows_BABI if "OOV" not in r["Model"] and int(r["Layer"])==12]
-# x_OOV = [int(r["KB"]) for r in rows_BABI if "OOV" in r["Model"] and int(r["Layer"])==12]
-
-# y = [float(r["ACC"]) for r in rows_BABI if "OOV" not in r["Model"] and int(r["Layer"])==12]
-# y_OOV = [float(r["ACC"]) for r in rows_BABI if "OOV" in r["Model"] and int(r["Layer"])==12]
-# fig, ax = plt.subplots()
-# ax.plot(x, y,label="GPT2")
-# ax.plot(x_OOV, y_OOV,label="GPT2+OOV")
-# plt.axhline(y=99.2,label="GLMP", color='r', linestyle='--')
-# plt.axhline(y=92.0,label="GLMP+OOV", color='g', linestyle='--')
-# # plt.axhline(y=99.66,label="QRN", color='y', linestyle='--')
-# # plt.axhline(y=67.8,label="QRN+OOV", color='b', linestyle='--')
-# ax.set(xlabel='Template', ylabel='Accuracy',
-#        title='Template Effectiveness')
-# ax.grid()
-# ax.legend()
-# fig.savefig("TEMPvsACC.png")
-
-# ### Layers vs ACC
-# rows_BABI = sorted(rows_BABI, key = lambda r: int(r["Layer"]))
-# x = [int(r["Layer"]) for r in rows_BABI if "OOV" not in r["Model"] and int(r["KB"])==264]
-# x_OOV = [int(r["Layer"]) for r in rows_BABI if "OOV" in r["Model"] and int(r["KB"])==264]
-
-# y = [float(r["ACC"]) for r in rows_BABI if "OOV" not in r["Model"] and int(r["KB"])==264]
-# y_OOV = [float(r["ACC"]) for r in rows_BABI if "OOV" in r["Model"] and int(r["KB"])==264]
-# fig, ax = plt.subplots()
-# ax.plot(x, y,label="GPT2")
-# ax.plot(x_OOV, y_OOV,label="GPT2+OOV")
-
-
-# ax.set(xlabel='Layers', ylabel='Accuracy',
-#        title='Template Effectiveness')
-# ax.grid()
-# ax.legend()
-
-# fig.savefig("LAYEvsACC.png")

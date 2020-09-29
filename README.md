@@ -31,8 +31,54 @@ In addition, our code also includes `fp16` support with `apex`. You can find the
 
 ## Experiments
 ### bAbI-5
+***Dataset***
+Download the preprocessed **dataset** inside the `./knowledge_embed/babi5` folder via
+
+```console
+❱❱❱ cd ./knowledge_embed/babi5
+❱❱❱ svn checkout https://github.com/HLTCHKUST/Mem2Seq/trunk/data/dialog-bAbI-tasks/ 
+```
+
+Generate the delexicalized meta data from bAbI-5 dataset via
+```console
+❱❱❱ python3 generate_delexicalization_babi.py
+```
+
+Generate the lexicalized data from bAbI-5 dataset via
+```console
+❱❱❱ python generate_dialogues_babi5.py --dialogue_path ./dialog-bAbI-tasks/dialog-babi-task5trn_record-delex.txt --knowledge_path ./dialog-bAbI-tasks/dialog-babi-kb-all.txt --output_folder <output_path> --num_augmented_knowledge <num_augmented_knowledge> --num_augmented_dialogue <num_augmented_dialogues> --random_seed 0
+```
+
+Where the maximum `<num_augmented_knowledge>` is 553 and `<num_augmented_dialogues>` is 264 as it is corresponds to the number of knowledge and number of dialogues in bAbI-5 dataset.
+
+***Fine-tune GPT-2***
+
+We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on bAbI training set. You can also choose to train the model by yourself using the following command.
+
+```console
+❱❱❱ cd ./modeling/babi5
+❱❱❱ python main.py --task mt --no_sample --model_checkpoint gpt2
+```
 
 ### CamRest
+***Dataset***
+
+Download the preprocessed [**dataset**](https://drive.google.com/file/d/1TIo74qjRiGeZNOiLKWit72a98lgv75MN/view) and put the zip file under `./knowledge_embed/camrest` folder and unzip via
+
+```console
+❱❱❱ cd ./knowledge_embed/camrest
+❱❱❱ unzip CamRest.zip
+```
+
+***Fine-tune GPT-2***
+
+We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on CamRest training set. You can also choose to train the model by yourself using the following command.
+
+
+```console
+❱❱❱ cd ./modeling/camrest/
+❱❱❱ python main.py --model_checkpoint gpt2 --dataset BABI
+```
 
 ### SMD 
 ***Dataset***
@@ -40,7 +86,8 @@ In addition, our code also includes `fp16` support with `apex`. You can find the
 Download the preprocessed [**dataset**](https://drive.google.com/open?id=1p5FgDcXYPp3s0MzQSbAi-ixqRxNhtfXX) and put it under `./knowledge_embed/smd` folder.
 
 ```console
-❱❱❱ unzip ./knowledge_embed/smd/SMD.zip
+❱❱❱ cd ./knowledge_embed/smd
+❱❱❱ unzip SMD.zip
 ```
 
 ***Fine-tune GPT-2***
@@ -48,7 +95,8 @@ Download the preprocessed [**dataset**](https://drive.google.com/open?id=1p5FgDc
 We provide the [**checkpoint**](https://drive.google.com/open?id=1CEtbwdosNqEGCB-zNntZ6a_UYCFx-SjI) of GPT-2 model fine-tuned on SMD training set. You can also choose to train the model by yourself using the following command.
 
 ```console
-❱❱❱ python ./modeling/smd/main.py --task mt --no_sample --model_checkpoint $model_path
+❱❱❱ cd ./modeling/smd/
+❱❱❱ python main.py --task mt --no_sample --model_checkpoint <model_path>
 ```
 
 ***Prepare Knowledge-embedded dialogues***
@@ -65,7 +113,6 @@ Then we generate dialogues based on pre-designed templates by domains. The follo
 ``` console
 ❱❱❱ python generate_dialogues_SMD.py --split test --dialogue_path ./templates/weather_template.txt --domain weather --num_augmented_dialogue 100 --output_folder ./data/test
 ```
-
 
 
 ### MWOZ
