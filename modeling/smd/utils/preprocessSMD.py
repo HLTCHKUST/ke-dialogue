@@ -88,12 +88,12 @@ def generate_dataset_FINETUNE(data_split,tokenizer,debugging=False):
 
 def load_SMD(args,tokenizer,test_flag=False,debugging=False,delex=False):    
     if(test_flag):
-        test = generate_dataset("data/SMD/test.txt",tokenizer,debugging)
+        test = generate_dataset("../../knowledge_embed/smd/SMD/test.txt",tokenizer,debugging)
         return test, None
     else:
-        train = generate_dataset("data/SMD/train.txt",tokenizer,debugging)
-        dev = generate_dataset("data/SMD/dev.txt",tokenizer,debugging)
-        test = generate_dataset("data/SMD/test.txt",tokenizer,debugging)
+        train = generate_dataset("../../knowledge_embed/smd/SMD/train.txt",tokenizer,debugging)
+        dev = generate_dataset("../../knowledge_embed/smd/SMD/dev.txt",tokenizer,debugging)
+        test = generate_dataset("../../knowledge_embed/smd/SMD/test.txt",tokenizer,debugging)
         smd = {"train":train,"valid":dev, "test":test}
         train_loader, valid_loader, test_loader = get_loader(args, smd, tokenizer)
         print(f"Max Len:{test_dataloader(args,train_loader)}")

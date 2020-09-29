@@ -116,7 +116,7 @@ You can also choose to train the model by yourself using the following command.
 
 ```console
 ❱❱❱ cd ./modeling/smd
-❱❱❱ python main.py --dataset SMD --graph False --adj_path False --edge_list False --unilm False --flatten_KB False --max_history 1000000000 --lr 6.25e-05 --n_epochs 10 --weight_tie False --kbpercentage 0 --layers 12
+❱❱❱ python main.py --dataset SMD --lr 6.25e-05 --n_epochs 10 --kbpercentage 0 --layers 12
 ```
 
 ***Prepare Knowledge-embedded dialogues***
@@ -134,7 +134,7 @@ Then we generate dialogues based on pre-designed templates by domains. The follo
 ❱❱❱ python generate_dialogues_SMD.py --split test --dialogue_path ./templates/weather_template.txt --domain weather --num_augmented_dialogue 100 --output_folder ./SMD/test
 ```
 
-***Adapt fine-tuned GPT-2 model on the test set***
+***Adapt fine-tuned GPT-2 model to the test set***
 
 ``` console
 ❱❱❱ python evaluate_finetune.py --dataset SMD --model_checkpoint runs/SMD_gpt2_graph_False_adj_False_edge_False_unilm_False_flattenKB_False_historyL_1000000000_lr_6.25e-05_epoch_10_weighttie_False_kbpercentage_0_layer_12 --top_k 1 --eval_indices 0,303 --filter_domain ""

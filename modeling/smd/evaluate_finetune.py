@@ -1,3 +1,8 @@
+import os
+import os.path
+import sys
+sys.path.append('../..')
+
 from transformers import (AdamW,WEIGHTS_NAME, CONFIG_NAME)
 from ignite.engine import Engine, Events
 from ignite.handlers import ModelCheckpoint
@@ -8,8 +13,6 @@ from utils.hugging_face import top_filtering, build_input_from_segments
 from utils.hugging_face import get_loader, load_model, get_parser, SPECIAL_TOKENS, MODEL_INPUTS, add_special_tokens_, average_distributed_scalar, make_logdir, add_token_bAbI
 from utils.preprocessSMD import load_SMD, generate_dataset_FINETUNE
 
-import os
-import os.path
 import math
 import random
 import numpy as np

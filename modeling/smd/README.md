@@ -2,8 +2,18 @@
 
 ## Finetune GPT2 model on SMD training set
 
+We provide the [**checkpoint**](https://drive.google.com/open?id=1v7P-UulLBTwdW2EIk2Jz0vdPKlpZlLUI) of GPT-2 model fine-tuned on SMD training set. Download the checkpoint and put it under `./modeling` folder.
+
+```console
+❱❱❱ cd ./knowledge_embed/smd
+❱❱❱ mkdir ./runs
+❱❱❱ unzip ./knowledge_embed/smd/SMD_gpt2_graph_False_adj_False_edge_False_unilm_False_flattenKB_False_historyL_1000000000_lr_6.25e-05_epoch_10_weighttie_False_kbpercentage_0_layer_12.zip -d ./runs
+```
+
+You can also choose to train the model by yourself using the following command.
+
 ``` console
-❱❱❱ python main.py --dataset SMD --graph False --adj_path False --edge_list False --unilm False --flatten_KB False --max_history 1000000000 --lr 6.25e-05 --n_epochs 10 --weight_tie False --kbpercentage 0 --layers 12
+❱❱❱  python main.py --dataset SMD --lr 6.25e-05 --n_epochs 10 --kbpercentage 0 --layers 12
 ```
 
 ## Adapt fine-tuned GPT-2 model on the test set

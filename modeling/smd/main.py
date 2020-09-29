@@ -1,3 +1,8 @@
+import os
+import os.path
+import sys
+sys.path.append('../..')
+
 from transformers import (AdamW,WEIGHTS_NAME, CONFIG_NAME)
 from utils.hugging_face import load_model,get_parser, SPECIAL_TOKENS,MODEL_INPUTS, add_special_tokens_, average_distributed_scalar, make_logdir, add_token_bAbI
 from utils.preprocessSMD import load_SMD
@@ -7,7 +12,6 @@ from ignite.handlers import ModelCheckpoint
 from ignite.metrics import Accuracy, Loss, MetricsLambda, RunningAverage
 from ignite.contrib.handlers import ProgressBar, PiecewiseLinear
 from ignite.contrib.handlers.tensorboard_logger import TensorboardLogger, OutputHandler, OptimizerParamsHandler
-import os
 import math
 import torch
 from pprint import pformat

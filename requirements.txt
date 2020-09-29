@@ -24,3 +24,4 @@ neo4j==1.7.6
 networkx==2.4
 bert-score==0.3.3
 tqdm==4.36.1
+ignite

@@ -1,10 +1,14 @@
+import os
+import os.path
+import sys
+sys.path.append('../..')
+
 from utils.preprocessSMD import load_SMD
 from transformers import (AdamW,WEIGHTS_NAME, CONFIG_NAME)
 from utils.hugging_face import load_model,get_parser,top_filtering, SPECIAL_TOKENS, add_special_tokens_, average_distributed_scalar, make_logdir, build_input_from_segments,add_token_bAbI
 from argparse import ArgumentParser
 import torch
 import torch.nn.functional as F
-import os
 from ignite.engine import Engine, Events
 from ignite.handlers import ModelCheckpoint
 from ignite.metrics import Accuracy, Loss, MetricsLambda, RunningAverage
@@ -19,7 +23,6 @@ from tqdm import tqdm
 import warnings
 import json
 import jsonlines
-import os.path
 from collections import defaultdict
 
 
