@@ -151,7 +151,49 @@ You can also speed up the finetuning process by running experiments parallelly. 
 ❱❱❱ python runner_expe_SMD.py 
 ```
 
-### MWOZ
+### MWOZ (2.1)
+***Dataset***
+
+Download the preprocessed [**dataset**](https://drive.google.com/file/d/1KdoVWqyYhpqEE8BzVDHMAjGUvl74mhUs) and put it under `./knowledge_embed/mwoz` folder.
+
+```console
+❱❱❱ cd ./knowledge_embed/mwoz
+❱❱❱ unzip mwoz.zip
+```
+
+***Prepare Knowledge-Embedded dialogues (You can skip this step, if you have downloaded the zip file above)***
+
+You can prepare the datasets by running
+```console
+❱❱❱ bash generate_MWOZ_all_data.sh
+```
+
+The shell script generates the delexicalized dialogues from MWOZ dataset by calling
+```console
+❱❱❱ python generate_delex_MWOZ_ATTRACTION.py
+❱❱❱ python generate_delex_MWOZ_HOTEL.py
+❱❱❱ python generate_delex_MWOZ_RESTAURANT.py
+❱❱❱ python generate_delex_MWOZ_TRAIN.py
+❱❱❱ python generate_redelex_augmented_MWOZ.py
+❱❱❱ python generate_MWOZ_dataset.py
+```
+
+***Fine-tune GPT-2***
+
+We provide the [**checkpoint**](https://drive.google.com/file/d/1sjhP4TMtR_wmWB9kuzCIJnETL5J1S9BL) of GPT-2 model fine-tuned on MWOZ training set. Download the checkpoint and put it under `./modeling` folder.
+
+```console
+❱❱❱ cd ./knowledge_embed/mwoz
+❱❱❱ mkdir ./runs
+❱❱❱ unzip ./mwoz.zip -d ./runs
+```
+
+You can also choose to train the model by yourself using the following command.
+
+```console
+❱❱❱ cd ./modeling/mwoz
+❱❱❱ python main.py --model_checkpoint gpt2 --dataset MWOZ_SINGLE --max_history 50 --train_batch_size 6 --kbpercentage 100 --fp16 O2 --gradient_accumulation_steps 3 --balance_sampler --n_epochs 10
+```
 
 ### OpenDialKG
 
