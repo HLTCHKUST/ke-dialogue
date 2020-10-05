@@ -5,7 +5,7 @@
 
 This is the implementation of the paper:
 
-**Learning Knowledge Bases with Parameters for Task-Oriented Dialogue Systems**. [**Andrea Madotto**](https://andreamad8.github.io), [Samuel Cahyawijaya](https://samuelcahyawijaya.github.io/), [Genta Indra Winata](https://gentawinata.com/), Yan Xu, [Zihan Liu](https://zliucr.github.io/), [Zhaojiang Lin](https://zlinao.github.io/), Pascale Fung **Findings of EMNLP 2020** [[PDF]](https://arxiv.org/pdf/2009.13656.pdf)
+**Learning Knowledge Bases with Parameters for Task-Oriented Dialogue Systems**. [**Andrea Madotto**](https://andreamad8.github.io), [Samuel Cahyawijaya](https://samuelcahyawijaya.github.io/), [Genta Indra Winata](https://gentawinata.com/), [Yan Xu](https://yana-xuyan.github.io), [Zihan Liu](https://zliucr.github.io/), [Zhaojiang Lin](https://zlinao.github.io/), Pascale Fung **Findings of EMNLP 2020** [[PDF]](https://arxiv.org/pdf/2009.13656.pdf)
 
 If you use any source codes or datasets included in this toolkit in your work, please cite the following paper. The bibtex is listed below:
 <pre>
