@@ -1,3 +1,6 @@
+import os, sys
+sys.path.append('../..')
+
 import json
 import os.path
 from utils.eval_metrics import moses_multi_bleu
