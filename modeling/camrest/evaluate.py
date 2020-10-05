@@ -1,3 +1,6 @@
+import os, sys
+sys.path.append('../..')
+
 from utils.preprocessSMD import load_SMD
 from utils.preprocessMWOZ import load_MWOZ,load_MWOZ_SINGLE
 from utils.preprocessDIALKG import load_DIALKG
@@ -11,7 +14,7 @@ from utils.hugging_face import load_model,get_parser,top_filtering, SPECIAL_TOKE
 from argparse import ArgumentParser
 import torch
 import torch.nn.functional as F
-import os
+
 from ignite.engine import Engine, Events
 from ignite.handlers import ModelCheckpoint
 from ignite.metrics import Accuracy, Loss, MetricsLambda, RunningAverage

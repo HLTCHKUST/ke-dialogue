@@ -59,17 +59,17 @@ def generate_dataset(data_split,tokenizer,debugging=False):
 def load_BABI(args,tokenizer,test_flag=False,OOV=False,debugging=False,kb_percentage=0):
     if(test_flag):
         if(OOV):
-            test = generate_dataset('data/dialog-bAbI-tasks/dialog-babi-task5tst-OOV.txt',tokenizer,debugging=debugging)
+            test = generate_dataset(f'{args.dataset_path}/dialog-babi-task5tst-OOV.txt',tokenizer,debugging=debugging)
         else:
-            test = generate_dataset('data/dialog-bAbI-tasks/dialog-babi-task5tst.txt',tokenizer,debugging=debugging)
+            test = generate_dataset(f'{args.dataset_path}/dialog-babi-task5tst.txt',tokenizer,debugging=debugging)
         return None, None, test
     else:
 
-        train = generate_dataset('data/dialog-bAbI-tasks/dialog-babi-task5trn.txt',tokenizer,debugging=debugging)
+        train = generate_dataset(f'{args.dataset_path}/dialog-babi-task5trn.txt',tokenizer,debugging=debugging)
         if(kb_percentage>0):
-            train += generate_dataset(f'data/dialog-bAbI-aug/gen-babi5-nk558-nd{kb_percentage}-rs0.txt',tokenizer,debugging=debugging)
-        dev = generate_dataset('data/dialog-bAbI-tasks/dialog-babi-task5dev.txt',tokenizer,debugging=debugging)
-        test = generate_dataset('data/dialog-bAbI-tasks/dialog-babi-task5tst.txt',tokenizer,debugging=debugging)
+            train += generate_dataset(f'{args.dataset_path}/gen-babi5-nk558-nd{kb_percentage}-rs0.txt',tokenizer,debugging=debugging)
+        dev = generate_dataset(f'{args.dataset_path}/dialog-babi-task5dev.txt',tokenizer,debugging=debugging)
+        test = generate_dataset(f'{args.dataset_path}/dialog-babi-task5tst.txt',tokenizer,debugging=debugging)
         smd = {"train":train,"valid":dev, "test":test}
         train_loader, valid_loader, test_loader = get_loader(args, smd, tokenizer)
         print(f"Max Len:{test_dataloader(args,train_loader)}")

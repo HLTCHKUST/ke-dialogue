@@ -20,7 +20,6 @@ import json
 import subprocess
 import tempfile
 import numpy as np
-from bleurt import score
 from collections import Counter
 from six.moves import urllib
 
@@ -574,8 +573,8 @@ def test():
   print(BLEU)
   BLEU = moses_multi_bleu(np.array([ref]),np.array([ref]))
   print(BLEU)
-  BLEURT = google_bleurt([sent] * 2,[ref] * 2)
-  print(BLEURT)
+#   BLEURT = google_bleurt([sent] * 2,[ref] * 2)
+#   print(BLEURT)
   BERTScore = huggingface_bertscore([sent],[ref],lang="en",model_type="bert-base-uncased",num_layers=9, batch_size=1)
   print(BERTScore)
   ROUGE = rouge([sent],[ref])

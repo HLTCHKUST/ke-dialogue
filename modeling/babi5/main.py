@@ -1,8 +1,10 @@
+import os, sys
+sys.path.append('../..')
+
 from utils.preprocessBABI import load_BABI, load_DSTC2
 from transformers import (AdamW,WEIGHTS_NAME, CONFIG_NAME)
 from utils.hugging_face import load_model,get_parser, SPECIAL_TOKENS,MODEL_INPUTS, add_special_tokens_, average_distributed_scalar, make_logdir, add_token_bAbI
 import torch
-import os
 from ignite.engine import Engine, Events
 from ignite.handlers import ModelCheckpoint
 from ignite.metrics import Accuracy, Loss, MetricsLambda, RunningAverage
@@ -28,26 +30,8 @@ if __name__ == "__main__":
         model, optimizer = amp.initialize(model, optimizer, opt_level=args.fp16)
     # Get data
     # print(f"Load Data {args.dataset}")
-    if(args.dataset == "SMD"):
-        train_loader, val_loader, test_loader = load_SMD(args, tokenizer, test_flag=False,debugging=args.debug)
-    elif(args.dataset == "MWOZ_SINGLE"):
-        train_loader, val_loader, test_loader = load_MWOZ_SINGLE(args, tokenizer, test_flag=False,debugging=args.debug,kb_percentage=args.kbpercentage)
-    elif(args.dataset == "MWOZ"):
-        train_loader, val_loader, test_loader = load_MWOZ(args, tokenizer, test_flag=False,debugging=args.debug)
-    elif(args.dataset == "DIALKG"):
-        # NOTE:
-        # kb_percentage is an integer here and it is not actually kb percentage, 
-        # but instead it is the number of iterations to take from the generation process
-        # number of iteration is the number of row from the ./data/opendialkg/generation_iteration.csv
-        train_loader, val_loader, test_loader = load_DIALKG(args, tokenizer, test_flag=False, kb_percentage=args.kbpercentage, debugging=args.debug)
-    elif(args.dataset == "TASKMASTER"):
-        train_loader, val_loader, test_loader = load_TASKMASTER(args, tokenizer, test_flag=False,debugging=args.debug)
-    elif(args.dataset == "BABI"):
+    if(args.dataset == "BABI"):
         train_loader, val_loader, test_loader = load_BABI(args, tokenizer, kb_percentage=args.kbpercentage, debugging=args.debug)
-    elif(args.dataset == "DSTC2"):
-        train_loader, val_loader, test_loader = load_DSTC2(args, tokenizer,debugging=args.debug)
-    elif(args.dataset == "CAMREST"):
-        train_loader, val_loader, test_loader = load_CAMREST(args, tokenizer,kb_percentage=args.kbpercentage,debugging=args.debug)
     else: 
         print("ERROR: select a dataset with --dataset [SMD|MWOZ|DIALKG]")
         exit(1)

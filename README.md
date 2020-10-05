@@ -51,10 +51,10 @@ Generate the delexicalized dialogues from bAbI-5 dataset via
 
 Generate the lexicalized data from bAbI-5 dataset via
 ```console
-❱❱❱ python generate_dialogues_babi5.py --dialogue_path ./dialog-bAbI-tasks/dialog-babi-task5trn_record-delex.txt --knowledge_path ./dialog-bAbI-tasks/dialog-babi-kb-all.txt --output_folder <output_path> --num_augmented_knowledge <num_augmented_knowledge> --num_augmented_dialogue <num_augmented_dialogues> --random_seed 0
+❱❱❱ python generate_dialogues_babi5.py --dialogue_path ./dialog-bAbI-tasks/dialog-babi-task5trn_record-delex.txt --knowledge_path ./dialog-bAbI-tasks/dialog-babi-kb-all.txt --output_folder ./dialog-bAbI-tasks --num_augmented_knowledge <num_augmented_knowledge> --num_augmented_dialogue <num_augmented_dialogues> --random_seed 0
 ```
 
-Where the maximum `<num_augmented_knowledge>` is 553 and `<num_augmented_dialogues>` is 264 as it is corresponds to the number of knowledge and number of dialogues in bAbI-5 dataset.
+Where the maximum `<num_augmented_knowledge>` is 558 (recommended) and `<num_augmented_dialogues>` is 264 as it is corresponds to the number of knowledge and number of dialogues in bAbI-5 dataset.
 
 ***Fine-tune GPT-2***
 
@@ -62,8 +62,10 @@ We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on bAbI training
 
 ```console
 ❱❱❱ cd ./modeling/babi5
-❱❱❱ python main.py --model_checkpoint gpt2 --dataset BABI
+❱❱❱ python main.py --model_checkpoint gpt2 --dataset BABI --dataset_path ../../knowledge_embed/babi5/dialog-bAbI-tasks --n_epochs 10 --kbpercentage <num_augmented_dialogues>
 ```
+
+Notes that the value of `--kbpercentage` is equal to `<num_augmented_dialogues>` the one that comes from the lexicalization. This parameter is used for selecting the augmentation file to embed into the train dataset.
 
 ### CamRest
 ***Dataset***
@@ -84,7 +86,7 @@ Generate the delexicalized dialogues from CamRest dataset via
 
 Generate the lexicalized data from CamRest dataset via
 ```console
-❱❱❱ python generate_dialogues_CAMREST.py --dialogue_path ./CamRest/train_record-delex.txt --knowledge_path ./CamRest/KB.json --output_folder <output_path> --num_augmented_knowledge <num_augmented_knowledge> --num_augmented_dialogue <num_augmented_dialogues> --random_seed 0
+❱❱❱ python generate_dialogues_CAMREST.py --dialogue_path ./CamRest/train_record-delex.txt --knowledge_path ./CamRest/KB.json --output_folder ./CamRest --num_augmented_knowledge <num_augmented_knowledge> --num_augmented_dialogue <num_augmented_dialogues> --random_seed 0
 ```
 
 ***Fine-tune GPT-2***

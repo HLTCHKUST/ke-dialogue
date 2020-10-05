@@ -1,3 +1,6 @@
+import os, sys
+sys.path.append('../..')
+
 from utils.preprocessSMD import load_SMD
 from utils.preprocessMWOZ import load_MWOZ,load_MWOZ_SINGLE
 from utils.preprocessDIALKG import load_DIALKG
@@ -6,17 +9,18 @@ from utils.preprocessBABI import load_BABI, load_DSTC2
 from utils.preprocessCAMRES import load_CAMREST
 # from transformers import (GPT2Tokenizer, GPT2LMHeadModel, GPT2Config, ReformerLMHeadModel, ReformerConfig, DIALOGGPT2LMHeadModel,WEIGHTS_NAME, CONFIG_NAME)
 # from transformers import BertTokenizer, BertForMaskedLM, SimpleTokenizer
-from transformers import (AdamW,WEIGHTS_NAME, CONFIG_NAME)
+from transformers import (AdamW, WEIGHTS_NAME, CONFIG_NAME)
 from utils.hugging_face import load_model,get_parser,top_filtering, SPECIAL_TOKENS, add_special_tokens_, average_distributed_scalar, make_logdir, build_input_from_segments,add_token_bAbI
 from argparse import ArgumentParser
 import torch
 import torch.nn.functional as F
-import os
+
 from ignite.engine import Engine, Events
 from ignite.handlers import ModelCheckpoint
 from ignite.metrics import Accuracy, Loss, MetricsLambda, RunningAverage
 from ignite.contrib.handlers import ProgressBar, PiecewiseLinear
 from ignite.contrib.handlers.tensorboard_logger import TensorboardLogger, OutputHandler, OptimizerParamsHandler
+
 import math
 from pprint import pformat
 import random
