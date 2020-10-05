@@ -71,15 +71,15 @@ def generate_dataset(data_split,tokenizer,debugging=False,edges=False):
 
 def load_CAMREST(args,tokenizer,test_flag=False,debugging=False,kb_percentage=0):
     if(test_flag):
-        test = generate_dataset('data/CamRest/test.txt',tokenizer,debugging=debugging,edges=args.flatten_KB)
+        test = generate_dataset(f'{args.dataset_path}/test.txt',tokenizer,debugging=debugging,edges=args.flatten_KB)
         return None, None, test
     else:
 
-        train = generate_dataset('data/CamRest/train.txt',tokenizer,debugging=debugging,edges=args.flatten_KB)
+        train = generate_dataset(f'{args.dataset_path}/train.txt',tokenizer,debugging=debugging,edges=args.flatten_KB)
         if(kb_percentage>0):
-            train += generate_dataset(f'data/CamRest/gen-babi7-nk201-nd{kb_percentage}-rs0.txt',tokenizer,debugging=debugging,edges=args.flatten_KB)
-        dev = generate_dataset('data/CamRest/dev.txt',tokenizer,debugging=debugging,edges=args.flatten_KB)
-        test = generate_dataset('data/CamRest/test.txt',tokenizer,debugging=debugging,edges=args.flatten_KB)
+            train += generate_dataset(f'{args.dataset_path}/gen-babi7-nk201-nd{kb_percentage}-rs0.txt',tokenizer,debugging=debugging,edges=args.flatten_KB)
+        dev = generate_dataset(f'{args.dataset_path}/dev.txt',tokenizer,debugging=debugging,edges=args.flatten_KB)
+        test = generate_dataset(f'{args.dataset_path}/test.txt',tokenizer,debugging=debugging,edges=args.flatten_KB)
         smd = {"train":train,"valid":dev, "test":test}
         train_loader, valid_loader, test_loader = get_loader(args, smd, tokenizer)
         print(f"Max Len:{test_dataloader(args,train_loader)}")

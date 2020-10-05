@@ -10,8 +10,6 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import itertools
-import bert_score
-import bleurt
 import numpy as np
 import numpy
 import os

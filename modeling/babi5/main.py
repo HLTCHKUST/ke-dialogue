@@ -33,7 +33,7 @@ if __name__ == "__main__":
     if(args.dataset == "BABI"):
         train_loader, val_loader, test_loader = load_BABI(args, tokenizer, kb_percentage=args.kbpercentage, debugging=args.debug)
     else: 
-        print("ERROR: select a dataset with --dataset [SMD|MWOZ|DIALKG]")
+        print("ERROR: select a dataset with --dataset [BABI]")
         exit(1)
     # Training function and trainer
     def update(engine, batch):

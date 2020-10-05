@@ -1,11 +1,6 @@
 import os, sys
 sys.path.append('../..')
 
-from utils.preprocessSMD import load_SMD
-from utils.preprocessMWOZ import load_MWOZ,load_MWOZ_SINGLE
-from utils.preprocessDIALKG import load_DIALKG
-from utils.preprocessTASKMASTER import load_TASKMASTER
-from utils.preprocessBABI import load_BABI, load_DSTC2
 from utils.preprocessCAMRES import load_CAMREST
 # from transformers import (GPT2Tokenizer, GPT2LMHeadModel, GPT2Config, ReformerLMHeadModel, ReformerConfig, DIALOGGPT2LMHeadModel,WEIGHTS_NAME, CONFIG_NAME)
 # from transformers import BertTokenizer, BertForMaskedLM, SimpleTokenizer
@@ -106,26 +101,10 @@ if __name__ == "__main__":
     model, tokenizer = load_model(args,load=True)
 
     print("Load Data")
-    if(args.dataset == "SMD"):
-        test, _ = load_SMD(args, tokenizer, test_flag=True)
-    elif(args.dataset == "MWOZ_SINGLE"):
-        _, _, test, _ = load_MWOZ_SINGLE(args, tokenizer, test_flag=True)
-    elif(args.dataset == "MWOZ"):
-        _, _, test, _ = load_MWOZ(args, tokenizer, test_flag=True)
-    elif(args.dataset == "DIALKG"):
-        _, _, test, _ = load_DIALKG(args, tokenizer, test_flag=True)
-    elif(args.dataset == "TASKMASTER"):
-        _, _, test, _ = load_TASKMASTER(args, tokenizer, test_flag=True)
-    elif(args.dataset == "BABI"):
-        _,_, test = load_BABI(args, tokenizer, test_flag=True)
-    elif(args.dataset == "BABI_OOV"):
-        _,_, test = load_BABI(args, tokenizer, test_flag=True, OOV=True)
-    elif(args.dataset == "DSTC2"):
-        _,_, test = load_DSTC2(args, tokenizer, test_flag=True)
-    elif(args.dataset == "CAMREST"):
+    if(args.dataset == "CAMREST"):
         _,_, test = load_CAMREST(args, tokenizer, test_flag=True)
     else: 
-        print("ERROR: select a dataset with --dataset [SMD|MWOZ|DIALKG]")
+        print("ERROR: select a dataset with --dataset [CAMREST]")
         exit(1)
 
     j_output = defaultdict(list)
