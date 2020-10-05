@@ -62,7 +62,7 @@ We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on bAbI training
 
 ```console
 ❱❱❱ cd ./modeling/babi5
-❱❱❱ python main.py --model_checkpoint gpt2 --dataset BABI --dataset_path ../../knowledge_embed/babi5/dialog-bAbI-tasks --n_epochs 10 --kbpercentage <num_augmented_dialogues>
+❱❱❱ python main.py --model_checkpoint gpt2 --dataset BABI --dataset_path ../../knowledge_embed/babi5/dialog-bAbI-tasks --n_epochs <num_epoch> --kbpercentage <num_augmented_dialogues>
 ```
 
 Notes that the value of `--kbpercentage` is equal to `<num_augmented_dialogues>` the one that comes from the lexicalization. This parameter is used for selecting the augmentation file to embed into the train dataset.
@@ -89,6 +89,9 @@ Generate the lexicalized data from CamRest dataset via
 ❱❱❱ python generate_dialogues_CAMREST.py --dialogue_path ./CamRest/train_record-delex.txt --knowledge_path ./CamRest/KB.json --output_folder ./CamRest --num_augmented_knowledge <num_augmented_knowledge> --num_augmented_dialogue <num_augmented_dialogues> --random_seed 0
 ```
 
+
+Where the maximum `<num_augmented_knowledge>` is 201 (recommended) and `<num_augmented_dialogues>` is 156 quite huge as it is corresponds to the number of knowledge and number of dialogues in CamRest dataset.
+
 ***Fine-tune GPT-2***
 
 We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on CamRest training set. You can also choose to train the model by yourself using the following command.
@@ -96,8 +99,10 @@ We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on CamRest train
 
 ```console
 ❱❱❱ cd ./modeling/camrest/
-❱❱❱ python main.py --model_checkpoint gpt2 --dataset CAMREST
+❱❱❱ python main.py --model_checkpoint gpt2 --dataset CAMREST --dataset_path ../../knowledge_embed/camrest/CamRest --n_epochs <num_epoch> --kbpercentage <num_augmented_dialogues>
 ```
+
+Notes that the value of `--kbpercentage` is equal to `<num_augmented_dialogues>` the one that comes from the lexicalization. This parameter is used for selecting the augmentation file to embed into the train dataset.
 
 ### SMD 
 ***Dataset***
