@@ -3,7 +3,7 @@ sys.path.append('../..')
 
 import json
 import os.path
-from utils.eval_metrics import moses_multi_bleu, huggingface_bertscore, google_bleurt
+from utils.eval_metrics import moses_multi_bleu, huggingface_bertscore
 import glob as glob
 import numpy as np
 import jsonlines
@@ -64,13 +64,13 @@ def score_MM(model,file_to_score,flattenKB=False):
 
     BLEU = moses_multi_bleu(np.array(GENR),np.array(GOLD))
     BERTScore = huggingface_bertscore(GENR,GOLD,lang="en",model_type="bert-base-uncased",num_layers=9,batch_size=1)
-    BLEURT = google_bleurt(GENR,GOLD)
+#     BLEURT = google_bleurt(GENR,GOLD)
     return {
             "Model":model,
             "KB":0,
             "BLEU": BLEU,
             "BERTScore": BERTScore,
-            "BLEURT": BLEURT,
+#             "BLEURT": BLEURT,
             "F1": 100*np.mean(F1_score)
             }
 
@@ -107,13 +107,13 @@ def score_KBRet(model,file_to_score,file_to_gold,flattenKB=False):
 
     BLEU = moses_multi_bleu(np.array(GENR),np.array(GOLD))
     BERTScore = huggingface_bertscore(GENR,GOLD,lang="en",model_type="bert-base-uncased",num_layers=9,batch_size=1)
-    BLEURT = google_bleurt(GENR,GOLD)
+#     BLEURT = google_bleurt(GENR,GOLD)
     return {
             "Model":model,
             "KB":0,
             "BLEU": BLEU,
             "BERTScore": BERTScore,
-            "BLEURT": BLEURT,
+#             "BLEURT": BLEURT,
             "F1": 100*np.mean(F1_score)
             }
 

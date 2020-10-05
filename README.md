@@ -71,7 +71,7 @@ Notes that the value of `--kbpercentage` is equal to `<num_augmented_dialogues>`
 To run the scorer for bAbI-5 task model, you can run the following command.
 
 ```console
-python scorer_BABI5.py --model_checkpoint <model_checkpoint> --dataset CAMREST --dataset_path ../../knowledge_embed/babi5/dialog-bAbI-tasks --kbpercentage 0
+python scorer_BABI5.py --model_checkpoint <model_checkpoint> --dataset BABI --dataset_path ../../knowledge_embed/babi5/dialog-bAbI-tasks --kbpercentage 0
 ```
 
 ### CamRest
