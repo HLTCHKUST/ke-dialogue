@@ -63,12 +63,18 @@ We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on bAbI training
 ```console
 ❱❱❱ cd ./modeling/babi5
 ❱❱❱ python main.py --model_checkpoint gpt2 --dataset BABI --dataset_path ../../knowledge_embed/babi5/dialog-bAbI-tasks --n_epochs <num_epoch> --kbpercentage <num_augmented_dialogues>
+❱❱❱ python evaluate.py --model_checkpoint gpt2 --dataset BABI --dataset_path ../../knowledge_embed/babi5/dialog-bAbI-tasks
 ```
 
 Notes that the value of `--kbpercentage` is equal to `<num_augmented_dialogues>` the one that comes from the lexicalization. This parameter is used for selecting the augmentation file to embed into the train dataset.
 
+You can evaluate the model by executing the following script
+```console
+❱❱❱ python evaluate.py --model_checkpoint <model_checkpoint_folder> --dataset BABI --dataset_path ../../knowledge_embed/babi5/dialog-bAbI-tasks
+```
+
 ***Scoring bAbI-5***
-To run the scorer for bAbI-5 task model, you can run the following command.
+To run the scorer for bAbI-5 task model, you can run the following command. Scorer will read all of the `result.json` under `runs` folder generated from `evaluate.py`
 
 ```console
 python scorer_BABI5.py --model_checkpoint <model_checkpoint> --dataset BABI --dataset_path ../../knowledge_embed/babi5/dialog-bAbI-tasks --kbpercentage 0
@@ -111,8 +117,13 @@ We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on CamRest train
 
 Notes that the value of `--kbpercentage` is equal to `<num_augmented_dialogues>` the one that comes from the lexicalization. This parameter is used for selecting the augmentation file to embed into the train dataset.
 
+You can evaluate the model by executing the following script
+```console
+❱❱❱ python evaluate.py --model_checkpoint <model_checkpoint_folder> --dataset CAMREST --dataset_path ../../knowledge_embed/camrest/CamRest
+```
+
 ***Scoring CamRest***
-To run the scorer for bAbI 5 task model, you can run the following command.
+To run the scorer for bAbI 5 task model, you can run the following command. Scorer will read all of the `result.json` under `runs` folder generated from `evaluate.py`
 
 ```console
 python scorer_CAMREST.py --model_checkpoint <model_checkpoint> --dataset CAMREST --dataset_path ../../knowledge_embed/camrest/CamRest --kbpercentage 0
