@@ -66,12 +66,12 @@ def generate_dataset(data_split,tokenizer,global_ent,test=False,debugging=False)
 # number of iteration is the number of row from the ./data/opendialkg/generation_iteration.csv
 def load_DIALKG(args,tokenizer,test_flag=False,kb_percentage=0,debugging=False):
     if(test_flag):
-        test =  generate_dataset(json.load(open("data/opendialkg/test.json")),tokenizer,debugging)
+        test =  generate_dataset(json.load(open(f'{args.dataset_path}/opendialkg/test.json')),tokenizer,debugging)
         return None, None, test, None
     else:
-        train = generate_dataset(json.load(open("data/opendialkg/train.json")),tokenizer,debugging)
-        dev =   generate_dataset(json.load(open("data/opendialkg/validation.json")),tokenizer,debugging)
-        test =  generate_dataset(json.load(open("data/opendialkg/test.json")),tokenizer,debugging)
+        train = generate_dataset(json.load(open(f'{args.dataset_path}/opendialkg/train.json')),tokenizer,debugging)
+        dev =   generate_dataset(json.load(open(f'{args.dataset_path}/opendialkg/validation.json')),tokenizer,debugging)
+        test =  generate_dataset(json.load(open(f'{args.dataset_path}/opendialkg/test.json')),tokenizer,debugging)
         data = {"train":train,"valid":dev, "test":test}
         
         print('Len train set: ', len(train))
@@ -80,55 +80,16 @@ def load_DIALKG(args,tokenizer,test_flag=False,kb_percentage=0,debugging=False):
         
         # Augment Knowledge based on number of iteration in kb_percentage
         if kb_percentage > 0:
-#             # Whole KB
-#             gen_dialogue_files = [
-#                 'generated_dialogue_bs300_rs693881060.json',
-#                 'generated_dialogue_bs300_rs560464480.json',
-#                 'generated_dialogue_bs300_rs511759073.json',
-#                 'generated_dialogue_bs300_rs116148700.json',
-#                 'generated_dialogue_bs300_rs989867607.json',
-#                 'generated_dialogue_bs300_rs111037802.json',
-#                 'generated_dialogue_bs300_rs742951073.json',
-#                 'generated_dialogue_bs300_rs109134373.json',
-#                 'generated_dialogue_bs300_rs323220618.json',
-#                 'generated_dialogue_bs300_rs876559936.json',
-#                 'generated_dialogue_bs300_rs623098398.json',
-#                 'generated_dialogue_bs300_rs163687372.json',
-#                 'generated_dialogue_bs300_rs437699457.json',
-#                 'generated_dialogue_bs300_rs935482928.json',
-#                 'generated_dialogue_bs300_rs749805460.json',
-#                 'generated_dialogue_bs300_rs408591830.json'
-#             ]
-
-            # Test KB
-            gen_dialogue_files = [
-                'generated_dialogue_bs300_rs158153050.json',
-                'generated_dialogue_bs300_rs171337731.json',
-                'generated_dialogue_bs300_rs173653611.json',
-                'generated_dialogue_bs300_rs287829087.json',
-                'generated_dialogue_bs300_rs542819933.json',
-                'generated_dialogue_bs300_rs774303173.json',
-                'generated_dialogue_bs300_rs913438202.json',
-                'generated_dialogue_bs300_rs936793989.json',
-            ]    
-            
             # Load augmentation data
             gen_dialogues = []
             for gen_dialogue_file in gen_dialogue_files:
-                gen_dialogues += json.load(open(f'./data/opendialkg/{gen_dialogue_file}','r'))    
+                gen_dialogues += json.load(open(f'{args.dataset_path}/generated_dialogue_bs100_rs{random_seed}.json','r'))    
             random.seed(0)
             augment_data = random.sample(gen_dialogues, kb_percentage)
             augment = generate_dataset(augment_data,tokenizer,debugging)
             
             train += augment
             
-            # Test Only KB
-#             augment =  generate_dataset(json.load(open("data/opendialkg/generated_dialogue_bs200_rs187039582.json")),tokenizer,debugging)
-#             iter_df = pd.read_csv('./data/opendialkg/generation_iteration.csv')
-#             num_augmentation = iter_df.head(int(kb_percentage))['generated'].sum()
-#             for i in range(num_augmentation):
-#                 train.append(augment[i])
-
         print('Len Train augmented: ',len(train))
         
         train_loader, valid_loader, test_loader = get_loader(args, data, tokenizer)

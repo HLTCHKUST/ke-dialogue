@@ -29,12 +29,12 @@ count = 1
 limit = 1
 random.seed(0)
 
-neo4j_driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "CAiRE2020neo4j"))
+neo4j_driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "<Password>"))
 global_ent = get_global_entity_DIALKG()
 
 # Generate Train Meta
-df = pd.read_csv('train_for_delex.csv')
-df.columns = ['message','user_rating','assistant_rating']
+df = pd.read_csv('./opendialkg/train.csv')
+df.columns = ['Messages','User Rating','Assistant Rating']
 
 generated_dialogues = []
 dialogue_metas = []
@@ -50,4 +50,4 @@ for i, row in tqdm(enumerate(df.itertuples())):
     dialogue_metas.append(dialogue_meta)
 
 # write_dialogue_to_file(generated_dialogues, batch_size)            
-pickle.dump(dialogue_metas, open('./opendialkg/dialogkg_train_meta_no_x_cased.pt','wb'))
+pickle.dump(dialogue_metas, open('./opendialkg/dialogkg_train_meta.pt','wb'))

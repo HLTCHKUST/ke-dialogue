@@ -26,7 +26,7 @@ parser.add_argument('--random_seed', type=int, required=True, help='The random s
 parser.add_argument('--batch_size', type=int, default=300, help='number of template for each iteration')
 parser.add_argument('--max_iteration', type=int, default=1000, help='limit number of iteration')
 parser.add_argument('--stop_count', type=int, default=5, help='minimum generation count to stop generation')
-parser.add_argument('--connection_string', type=str, default='bolt://eez115.ece.ust.hk:7687', help='connection string of the neo4j')
+parser.add_argument('--connection_string', type=str, default='bolt://localhost:7687', help='connection string of the neo4j')
 args = vars(parser.parse_args())
 
 # Load Config
@@ -38,11 +38,11 @@ stop_count = args['stop_count']
 connection_string = args['connection_string']
 
 # Setup Neo4j connection
-neo4j_driver = GraphDatabase.driver(connection_string, auth=("neo4j", "CAiRE2020neo4j"))
+neo4j_driver = GraphDatabase.driver(connection_string, auth=("neo4j", "<PASSWORD>"))
 
 # Load the meta file
 print('Loading meta files...')
-train_dialogue_metas = pickle.load(open('./opendialkg/dialogkg_train_meta_no_x_cased_reduced.pt', 'rb'))
+train_dialogue_metas = pickle.load(open('./opendialkg/dialogkg_train_meta.pt', 'rb'))
 len_subgraphs = list(map(lambda x: len(x[3][2]), train_dialogue_metas))
 train_meta_df = pd.DataFrame({'graph_len':len_subgraphs, 'meta':train_dialogue_metas})
 

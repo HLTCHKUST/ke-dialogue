@@ -63,7 +63,6 @@ We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on bAbI training
 ```console
 ❱❱❱ cd ./modeling/babi5
 ❱❱❱ python main.py --model_checkpoint gpt2 --dataset BABI --dataset_path ../../knowledge_embed/babi5/dialog-bAbI-tasks --n_epochs <num_epoch> --kbpercentage <num_augmented_dialogues>
-❱❱❱ python evaluate.py --model_checkpoint gpt2 --dataset BABI --dataset_path ../../knowledge_embed/babi5/dialog-bAbI-tasks
 ```
 
 Notes that the value of `--kbpercentage` is equal to `<num_augmented_dialogues>` the one that comes from the lexicalization. This parameter is used for selecting the augmentation file to embed into the train dataset.
@@ -82,8 +81,6 @@ python scorer_BABI5.py --model_checkpoint <model_checkpoint> --dataset BABI --da
 
 ### CamRest
 ***Dataset***
-
-Create directory ``
 
 Download the preprocessed [**dataset**](https://drive.google.com/file/d/1rmKB4RUJCHrlbqAuxXbcLLjQiPxAq4qq/view?usp=sharing) and put the zip file under `./knowledge_embed/camrest` folder. Unzip the zip file by executing
 
@@ -227,7 +224,60 @@ You can also choose to train the model by yourself using the following command.
 ```
 
 ### OpenDialKG
+***Getting Started***
+We use `neo4j` community server edition and `apoc` library for processing graph data. `apoc` is used to parallelize the query in `neo4j`, so that we can process large scale graph faster
 
+Before proceed to the dataset section, you need to ensure that you have `neo4j` (https://neo4j.com/download-center/#community) and `apoc` (https://neo4j.com/developer/neo4j-apoc/) installed on your system.
+
+If you are not familiar with `CYPHER` and `apoc` syntaxes, you can follow the tutorial in `https://neo4j.com/developer/cypher/` and `https://neo4j.com/blog/intro-user-defined-procedures-apoc/`
+
+***Dataset***
+Download the original [**dataset**](https://drive.google.com/file/d/1llH4-4-h39sALnkXmGR8R6090xotE0PE/view?usp=sharing) and put the zip file inside the `./knowledge_embed/opendialkg` folder. Extract the zip file by executing
+
+```console
+❱❱❱ cd ./knowledge_embed/opendialkg
+❱❱❱ unzip https://drive.google.com/file/d/1llH4-4-h39sALnkXmGR8R6090xotE0PE/view?usp=sharing.zip
+```
+
+Generate the delexicalized dialogues from opendialkg dataset via
+```console
+❱❱❱ python3 generate_delexicalization_DIALKG.py
+```
+
+This script will produce `./opendialkg/dialogkg_train_meta.pt` which will be use to generate the lexicalized dialogue. 
+You can then generate the lexicalized dialogue from opendialkg dataset via
+```console
+❱❱❱ python generate_dialogues_DIALKG.py --random_seed <random_seed> --batch_size 100 --max_iteration <max_iter> --stop_count <stop_count> --connection_string bolt://localhost:7687
+```
+
+This script will produce samples of dialogues at most `batch_size * max_iter` samples, but in every batch there is a possibility where there is no valid candidate and resulting in less samples. The number of generation is limited by another factor called `stop_count` which will stop the generation if the number of generated samples is more than equal the specified `stop_count`. The file will produce 4 files: `./opendialkg/db_count_records_{random_seed}.csv`, `./opendialkg/used_count_records_{random_seed}.csv`, and `./opendialkg/generation_iteration_{random_seed}.csv`  which are used for checking the distribution shift of the count in the DB; and `./opendialkg/generated_dialogue_bs100_rs{random_seed}.json`  which contains the generated samples.
+
+*Notes*: 
+- You might need to change the `neo4j` password inside `generate_delexicalization_DIALKG.py` and `generate_dialogues_DIALKG.py` manually.
+- Because there is a ton of possibility of connection in dialkg, we use sampling method to generate the data, so random seed is crucial if you want to have reproducible result
+
+***Fine-tune GPT-2***
+
+We provide the [**checkpoint**](https://drive.google.com/file/d/1dtB5rXrZ2i02-mV6X7Bh1qewm6yZ3zzL/view?usp=sharing) of GPT-2 model fine-tuned on opendialkg training set. You can also choose to train the model by yourself using the following command.
+
+```console
+❱❱❱ cd ./modeling/opendialkg
+❱❱❱ python main.py --dataset_path ../../knowledge_embed/opendialkg/opendialkg --model_checkpoint gpt2 --dataset DIALKG --n_epochs 50 --kbpercentage <random_seed> --train_batch_size 8 --valid_batch_size 8
+```
+
+Notes that the value of `--kbpercentage` is equal to `<random_seed>` the one that comes from the lexicalization. This parameter is used for selecting the augmentation file to embed into the train dataset.
+
+You can evaluate the model by executing the following script
+```console
+❱❱❱ python evaluate.py  --model_checkpoint <model_checkpoint_folder> --dataset DIALKG --dataset_path  ../../knowledge_embed/opendialkg/opendialkg
+```
+
+***Scoring OpenDialKG***
+To run the scorer for bAbI-5 task model, you can run the following command. Scorer will read all of the `result.json` under `runs` folder generated from `evaluate.py`
+
+```console
+python scorer_DIALKG5.py --model_checkpoint <model_checkpoint> --dataset DIALKG  ../../knowledge_embed/opendialkg/opendialkg --kbpercentage 0
+```
 
 ## Further Details
 For the details regarding to the experiments, hyperparameters, and Evaluation results you can find it in the main paper of and suplementary materials of our work.
