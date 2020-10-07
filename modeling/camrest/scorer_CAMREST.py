@@ -217,24 +217,7 @@ for f in glob.glob("runs/*"):
             #     kb =0 
         rows_BABI.append(score_BABI(st,f+'/result.json',eval(flattenKB),kb))
 
-rows_BABI.append(score_MM("Multi-level memory",'runs/MM/results.json',False))
-rows_BABI.append(score_KBRet("KBRet",'runs/KBret/pred.txt','runs/KBret/gold.txt',False))
+# rows_BABI.append(score_MM("Multi-level memory",'runs/MM/results.json',False))
+# rows_BABI.append(score_KBRet("KBRet",'runs/KBret/pred.txt','runs/KBret/gold.txt',False))
 
 print(tabulate(rows_BABI,headers="keys",tablefmt='latex',floatfmt=".3f",numalign="center"))
-
-# rows_BABI = sorted(rows_BABI, key = lambda r: int(r["KB"]))
-# x = [int(r["KB"]) for r in rows_BABI if "Multi-level memory" not in r["Model"] and "KB" in r["Model"]]
-# y = [float(r["F1"]) for r in rows_BABI if "Multi-level memory" not in r["Model"] and "KB" in r["Model"]]
-# y_MLMN = [float(r["F1"]) for r in rows_BABI if "Multi-level memory" == r["Model"]][0]
-# y_GPTKB = [float(r["F1"]) for r in rows_BABI if "+REALK " in r["Model"]][0]
-# fig, ax = plt.subplots()
-# ax.plot(x, y,label="GPT2")
-
-# plt.axhline(y=y_MLMN,label="MLMN", color='r', linestyle='--')
-# plt.axhline(y=y_GPTKB,label="GPT2+KB", color='g', linestyle='-.')
-
-# ax.set(xlabel='Template', ylabel='Accuracy',
-#        title='Template Effectiveness')
-# ax.grid()
-# ax.legend()
-# fig.savefig("CAMREST_TEMPvsACC.png")
