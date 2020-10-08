@@ -239,7 +239,7 @@ Download the original [**dataset**](https://drive.google.com/file/d/1llH4-4-h39s
 ❱❱❱ unzip https://drive.google.com/file/d/1llH4-4-h39sALnkXmGR8R6090xotE0PE/view?usp=sharing.zip
 ```
 
-Generate the delexicalized dialogues from opendialkg dataset via
+Generate the delexicalized dialogues from opendialkg dataset via (**WARNING**: this requires around 12 hours to run)
 ```console
 ❱❱❱ python3 generate_delexicalization_DIALKG.py
 ```

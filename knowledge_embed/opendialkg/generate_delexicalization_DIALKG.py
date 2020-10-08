@@ -29,7 +29,7 @@ count = 1
 limit = 1
 random.seed(0)
 
-neo4j_driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "<Password>"))
+neo4j_driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "<PASSWORD>"))
 global_ent = get_global_entity_DIALKG()
 
 # Generate Train Meta
@@ -38,6 +38,8 @@ df.columns = ['Messages','User Rating','Assistant Rating']
 
 generated_dialogues = []
 dialogue_metas = []
+print(df.columns)
+df.columns = ['message', 'user_rating', 'assistant_rating']
 for i, row in tqdm(enumerate(df.itertuples())):
     dialogue = []
     KB = []

@@ -119,7 +119,7 @@ def execute_retrieve_node_count(neo4j_driver, suffix=None):
 # Common function
 ###
 def get_global_entity_DIALKG():
-    with open('opendialkg/data/opendialkg_entities.txt') as f:
+    with open('./opendialkg/opendialkg_entities.txt') as f:
         global_entity_list = []
         for x in f:
             global_entity_list.append(x.replace("\n",""))
