@@ -58,7 +58,7 @@ Where the maximum `<num_augmented_knowledge>` is 558 (recommended) and `<num_aug
 
 ***Fine-tune GPT-2***
 
-We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on bAbI training set. You can also choose to train the model by yourself using the following command.
+We provide the [**checkpoint**](https://drive.google.com/file/d/1XcmjZCkB4bL01kKoDt7-3VnQ-05K0JJ2/view?usp=sharing) of GPT-2 model fine-tuned on bAbI training set. You can also choose to train the model by yourself using the following command.
 
 ```console
 ❱❱❱ cd ./modeling/babi5
@@ -104,7 +104,7 @@ Where the maximum `<num_augmented_knowledge>` is 201 (recommended) and `<num_aug
 
 ***Fine-tune GPT-2***
 
-We provide the [**checkpoint**](TODO) of GPT-2 model fine-tuned on CamRest training set. You can also choose to train the model by yourself using the following command.
+We provide the [**checkpoint**](https://drive.google.com/file/d/1MBkc1gPnQ8IF2TFBRsSlUYZbBby4qvs1/view?usp=sharing) of GPT-2 model fine-tuned on CamRest training set. You can also choose to train the model by yourself using the following command.
 
 
 ```console
