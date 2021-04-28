@@ -1,7 +1,7 @@
 # Knowledge Embedded (KE) on SMD dataset
 ## Data Setup
 
-Download the preprocessed [**dataset**](https://drive.google.com/open?id=1p5FgDcXYPp3s0MzQSbAi-ixqRxNhtfXX) and put it under `./knowledge_embed/smd` folder.
+Download the preprocessed [**dataset**](https://drive.google.com/open?id=1TU5IRFy-cQ9xlckJUdLmSJmY7qTaquP8) and put it under `./knowledge_embed/smd` folder.
 
 ```console
 ❱❱❱ unzip ./knowledge_embed/smd/SMD.zip
