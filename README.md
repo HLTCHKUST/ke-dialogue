@@ -137,7 +137,7 @@ Download the preprocessed [**dataset**](https://drive.google.com/open?id=1p5FgDc
 
 ***Fine-tune GPT-2***
 
-We provide the [**checkpoint**](https://drive.google.com/open?id=1v7P-UulLBTwdW2EIk2Jz0vdPKlpZlLUI) of GPT-2 model fine-tuned on SMD training set. Download the checkpoint and put it under `./modeling` folder.
+We provide the [**checkpoint**](https://drive.google.com/open?id=13r4k_Z5OxmI8-09oCBduCs_4Cr4WBekR) of GPT-2 model fine-tuned on SMD training set. Download the checkpoint and put it under `./modeling` folder.
 
 ```console
 ❱❱❱ cd ./knowledge_embed/smd
