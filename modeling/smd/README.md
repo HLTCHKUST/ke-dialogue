@@ -2,12 +2,12 @@
 
 ## Finetune GPT2 model on SMD training set
 
-We provide the [**checkpoint**](https://drive.google.com/open?id=1v7P-UulLBTwdW2EIk2Jz0vdPKlpZlLUI) of GPT-2 model fine-tuned on SMD training set. Download the checkpoint and put it under `./modeling` folder.
+We provide the [**checkpoint**](https://drive.google.com/open?id=1v7P-UulLBTwdW2EIk2Jz0vdPKlpZlLUI) of GPT-2 model fine-tuned on SMD training set. Download the checkpoint and put it under `./modeling/smd` folder.
 
 ```console
 ❱❱❱ cd ./modeling/smd
 ❱❱❱ mkdir ./runs
-❱❱❱ unzip ./modeling/smd/SMD_gpt2_graph_False_adj_False_edge_False_unilm_False_flattenKB_False_historyL_1000000000_lr_6.25e-05_epoch_10_weighttie_False_kbpercentage_0_layer_12.zip -d ./runs
+❱❱❱ unzip FOLDER/TO/CHECKPOINT/SMD_gpt2_graph_False_adj_False_edge_False_unilm_False_flattenKB_False_historyL_1000000000_lr_6.25e-05_epoch_10_weighttie_False_kbpercentage_0_layer_12.zip -d ./runs
 ```
 
 You can also choose to train the model by yourself using the following command.
