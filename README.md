@@ -128,7 +128,7 @@ python scorer_CAMREST.py --model_checkpoint <model_checkpoint> --dataset CAMREST
 ### SMD 
 ***Dataset***
 
-Download the preprocessed [**dataset**](https://drive.google.com/open?id=1p5FgDcXYPp3s0MzQSbAi-ixqRxNhtfXX) and put it under `./knowledge_embed/smd` folder.
+Download the preprocessed [**dataset**](https://drive.google.com/open?id=1TU5IRFy-cQ9xlckJUdLmSJmY7qTaquP8) and put it under `./knowledge_embed/smd` folder.
 
 ```console
 ❱❱❱ cd ./knowledge_embed/smd
